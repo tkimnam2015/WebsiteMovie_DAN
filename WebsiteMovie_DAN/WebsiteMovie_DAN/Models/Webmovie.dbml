@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Webmoviedb" Class="WebmovieDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=KIMNAM\SQLEXPRESS;Initial Catalog=Webmoviedb;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="WebmoviedbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Banner" Member="Banners">
+    <Type Name="Banner">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IDPhim" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DSPhimBo_Banner" Member="DSPhimBo" ThisKey="IDPhim" OtherKey="ID" Type="DSPhimBo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tintucphim" Member="tintucphims">
+    <Type Name="tintucphim">
+      <Column Name="idtintuc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tieude" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="tomtat" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="noidung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hinhanh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ngaycapnhat" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="luotxem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CTTapPhim" Member="CTTapPhims">
+    <Type Name="CTTapPhim">
+      <Column Name="IDPhim" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TapPhim" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="DSPhimBo_CTTapPhim" Member="DSPhimBo" ThisKey="ID" OtherKey="ID" Type="DSPhimBo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DSPhimBo" Member="DSPhimBos">
+    <Type Name="DSPhimBo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenPhim" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NoiDung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NamPhatHanh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDTheLoai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThoiLuong" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MaQG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LuotXem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DSPhimBo_Banner" Member="Banners" ThisKey="ID" OtherKey="IDPhim" Type="Banner" />
+      <Association Name="DSPhimBo_CTTapPhim" Member="CTTapPhims" ThisKey="ID" OtherKey="ID" Type="CTTapPhim" />
+      <Association Name="DSPhimBo_HopPhim" Member="HopPhims" ThisKey="ID" OtherKey="IDPhim" Type="HopPhim" />
+      <Association Name="DSPhimBo_LichSu" Member="LichSus" ThisKey="ID" OtherKey="IDPhim" Type="LichSu" />
+      <Association Name="Nam_DSPhimBo" Member="Nam" ThisKey="NamPhatHanh" OtherKey="MaNam" Type="Nam" IsForeignKey="true" />
+      <Association Name="QuocGia_DSPhimBo" Member="QuocGia" ThisKey="MaQG" OtherKey="MaQG" Type="QuocGia" IsForeignKey="true" />
+      <Association Name="TheLoai_DSPhimBo" Member="TheLoai" ThisKey="IDTheLoai" OtherKey="IDTheLoai" Type="TheLoai" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DSPhimLe" Member="DSPhimLes">
+    <Type Name="DSPhimLe">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenPhim" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NoiDung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NamPhatHanh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDTheLoai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThoiLuong" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MaQG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LuotXem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Nam_DSPhimLe" Member="Nam" ThisKey="NamPhatHanh" OtherKey="MaNam" Type="Nam" IsForeignKey="true" />
+      <Association Name="QuocGia_DSPhimLe" Member="QuocGia" ThisKey="MaQG" OtherKey="MaQG" Type="QuocGia" IsForeignKey="true" />
+      <Association Name="TheLoai_DSPhimLe" Member="TheLoai" ThisKey="IDTheLoai" OtherKey="IDTheLoai" Type="TheLoai" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.gioithieu" Member="gioithieus">
+    <Type Name="gioithieu">
+      <Column Name="idgioitin" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="noidung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="sdtlien" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HopPhim" Member="HopPhims">
+    <Type Name="HopPhim">
+      <Column Name="TenDN" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDPhim" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="DSPhimBo_HopPhim" Member="DSPhimBo" ThisKey="IDPhim" OtherKey="ID" Type="DSPhimBo" IsForeignKey="true" />
+      <Association Name="TaiKhoan_HopPhim" Member="TaiKhoan" ThisKey="TenDN" OtherKey="TenDN" Type="TaiKhoan" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LichSu" Member="LichSus">
+    <Type Name="LichSu">
+      <Column Name="TenDN" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDPhim" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="DSPhimBo_LichSu" Member="DSPhimBo" ThisKey="IDPhim" OtherKey="ID" Type="DSPhimBo" IsForeignKey="true" />
+      <Association Name="TaiKhoan_LichSu" Member="TaiKhoan" ThisKey="TenDN" OtherKey="TenDN" Type="TaiKhoan" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Nam" Member="Nams">
+    <Type Name="Nam">
+      <Column Name="MaNam" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenNam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Nam_DSPhimBo" Member="DSPhimBos" ThisKey="MaNam" OtherKey="NamPhatHanh" Type="DSPhimBo" />
+      <Association Name="Nam_DSPhimLe" Member="DSPhimLes" ThisKey="MaNam" OtherKey="NamPhatHanh" Type="DSPhimLe" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QuocGia" Member="QuocGias">
+    <Type Name="QuocGia">
+      <Column Name="MaQG" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenQG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="QuocGia_DSPhimBo" Member="DSPhimBos" ThisKey="MaQG" OtherKey="MaQG" Type="DSPhimBo" />
+      <Association Name="QuocGia_DSPhimLe" Member="DSPhimLes" ThisKey="MaQG" OtherKey="MaQG" Type="DSPhimLe" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
+    <Type Name="TaiKhoan">
+      <Column Name="TenDN" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MatKhau" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Quyen" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TaiKhoan_HopPhim" Member="HopPhims" ThisKey="TenDN" OtherKey="TenDN" Type="HopPhim" />
+      <Association Name="TaiKhoan_LichSu" Member="LichSus" ThisKey="TenDN" OtherKey="TenDN" Type="LichSu" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TheLoai" Member="TheLoais">
+    <Type Name="TheLoai">
+      <Column Name="IDTheLoai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenTheLoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TheLoai_DSPhimBo" Member="DSPhimBos" ThisKey="IDTheLoai" OtherKey="IDTheLoai" Type="DSPhimBo" />
+      <Association Name="TheLoai_DSPhimLe" Member="DSPhimLes" ThisKey="IDTheLoai" OtherKey="IDTheLoai" Type="DSPhimLe" />
+    </Type>
+  </Table>
+</Database>

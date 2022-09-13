@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.5, 14" name="Webmovie">
+  <DataContextMoniker Name="/WebmovieDataContext" />
+  <nestedChildShapes>
+    <classShape Id="bda07205-22dc-499e-b2bf-9e23de2c2cb3" absoluteBounds="6.25, 10, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/WebmovieDataContext/Banner" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4a6f4650-f055-4bb9-a3ab-db174333f399" absoluteBounds="6.265, 10.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fbf4f336-50f6-42ad-b971-b57a552604b5" absoluteBounds="8.75, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/WebmovieDataContext/tintucphim" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fe4be2ce-9f94-457a-851f-7c524b9c4e55" absoluteBounds="8.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="29c3a671-71fd-4d02-a875-8555360a751f" absoluteBounds="6.25, 12.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/WebmovieDataContext/CTTapPhim" />
+      <nestedChildShapes>
+        <elementListCompartment Id="69104c2c-f480-4f34-af6c-8a1253e77834" absoluteBounds="6.265, 12.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9f404176-0eab-434f-a937-d0448a392912" absoluteBounds="3.5, 5.625, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/WebmovieDataContext/DSPhimBo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9d3222a4-e62b-4799-b0c3-469283788115" absoluteBounds="3.515, 6.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d3b7455f-5850-4628-a140-93e4dbd6fb6e" absoluteBounds="6.5, 5.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/WebmovieDataContext/DSPhimLe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ca4e7b8-830e-4eb7-b1a2-2aea10555026" absoluteBounds="6.515, 5.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="722df048-f51d-43cc-9a75-cdcb5a3e4f96" absoluteBounds="0.75, 0.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/WebmovieDataContext/gioithieu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="50fb6d8e-0293-4ecb-879d-bb00999cbd73" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dc4c0116-3939-487a-911b-7b66b5526553" absoluteBounds="6.25, 3.375, 2, 1.1939925130208331">
+      <DataClassMoniker Name="/WebmovieDataContext/HopPhim" />
+      <nestedChildShapes>
+        <elementListCompartment Id="166cd508-7865-40b6-b391-554fd69ead48" absoluteBounds="6.265, 3.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="94aa1617-cb3d-4897-a1e9-e6093c331ba9" absoluteBounds="9.25, 6.375, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/WebmovieDataContext/LichSu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7f3846fc-67f1-43de-9f90-c23b6e24262b" absoluteBounds="9.265, 6.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="033c01a2-938d-4d8c-b09a-81e1a2df09eb" absoluteBounds="0.75, 6.375, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/WebmovieDataContext/Nam" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6d8cb7ab-e707-4617-9fe6-c8015758e770" absoluteBounds="0.765, 6.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9ccf0a4c-c4d4-45af-a686-4145bcc9692d" absoluteBounds="0.75, 4.375, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/WebmovieDataContext/QuocGia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d1630ebe-2b3c-433a-8bb3-745b165d3325" absoluteBounds="0.765, 4.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0c909929-702c-4a57-91d0-15f0da247ca2" absoluteBounds="3.5, 3.25, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/WebmovieDataContext/TaiKhoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1ca3868-d061-4273-a972-fb3fc8058e96" absoluteBounds="3.515, 3.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="328007aa-1a01-49e4-b728-417e8755683e" absoluteBounds="0.75, 8.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/WebmovieDataContext/TheLoai" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f78f4e53-4fcc-4e68-acf7-27654dbd467c" absoluteBounds="0.765, 8.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 8.1651025390625); (4.5 : 10.6931469726562); (4.94791916666667 : 10.6931469726562 : JumpStart); (5.11458583333333 : 10.6931469726562 : JumpEnd); (6.25 : 10.6931469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WebmovieDataContext/DSPhimBo/DSPhimBo_Banner" />
+      <nodes>
+        <classShapeMoniker Id="9f404176-0eab-434f-a937-d0448a392912" />
+        <classShapeMoniker Id="bda07205-22dc-499e-b2bf-9e23de2c2cb3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.0312525 : 8.1651025390625); (5.0312525 : 12.9142976888021); (6.25 : 12.9142976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WebmovieDataContext/DSPhimBo/DSPhimBo_CTTapPhim" />
+      <nodes>
+        <classShapeMoniker Id="9f404176-0eab-434f-a937-d0448a392912" />
+        <classShapeMoniker Id="29c3a671-71fd-4d02-a875-8555360a751f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.625); (5.875 : 5.25); (5.875 : 3.97199625651042); (6.25 : 3.97199625651042)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WebmovieDataContext/DSPhimBo/DSPhimBo_HopPhim" />
+      <nodes>
+        <classShapeMoniker Id="9f404176-0eab-434f-a937-d0448a392912" />
+        <classShapeMoniker Id="dc4c0116-3939-487a-911b-7b66b5526553" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.468748 : 5.625); (4.468748 : 5.375); (5.66666666666667 : 5.375 : JumpStart); (5.83333333333333 : 5.375 : JumpEnd); (6.25 : 5.375); (6.25 : 8.48240397135417); (7.44791916666667 : 8.48240397135417 : JumpStart); (7.61458583333333 : 8.48240397135417 : JumpEnd); (8.875 : 8.48240397135417); (8.875 : 6.97199625651042); (9.25 : 6.97199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WebmovieDataContext/DSPhimBo/DSPhimBo_LichSu" />
+      <nodes>
+        <classShapeMoniker Id="9f404176-0eab-434f-a937-d0448a392912" />
+        <classShapeMoniker Id="94aa1617-cb3d-4897-a1e9-e6093c331ba9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.97199625651042); (3.5 : 6.97199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WebmovieDataContext/Nam/Nam_DSPhimBo" />
+      <nodes>
+        <classShapeMoniker Id="033c01a2-938d-4d8c-b09a-81e1a2df09eb" />
+        <classShapeMoniker Id="9f404176-0eab-434f-a937-d0448a392912" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.56899251302083); (3.125 : 7.94399251302083); (3.125 : 8.60740397135417); (3.88541416666667 : 8.60740397135417 : JumpStart); (4.05208083333333 : 8.60740397135417 : JumpEnd); (4.41666666666667 : 8.60740397135417 : JumpStart); (4.58333333333333 : 8.60740397135417 : JumpEnd); (4.94791916666667 : 8.60740397135417 : JumpStart); (5.11458583333333 : 8.60740397135417 : JumpEnd); (6.125 : 8.60740397135417); (6.5 : 8.23240397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebmovieDataContext/Nam/Nam_DSPhimLe" />
+      <nodes>
+        <classShapeMoniker Id="033c01a2-938d-4d8c-b09a-81e1a2df09eb" />
+        <classShapeMoniker Id="d3b7455f-5850-4628-a140-93e4dbd6fb6e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.56899251302083); (3.125 : 5.94399251302083); (3.125 : 5.24846253846154); (3.50153746153846 : 5.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebmovieDataContext/QuocGia/QuocGia_DSPhimBo" />
+      <nodes>
+        <classShapeMoniker Id="9ccf0a4c-c4d4-45af-a686-4145bcc9692d" />
+        <classShapeMoniker Id="9f404176-0eab-434f-a937-d0448a392912" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.03689697265625); (5.79166666666667 : 5.03689697265625 : JumpStart); (5.95833333333333 : 5.03689697265625 : JumpEnd); (8.40625 : 5.03689697265625); (8.40625 : 5.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WebmovieDataContext/QuocGia/QuocGia_DSPhimLe" />
+      <nodes>
+        <classShapeMoniker Id="9ccf0a4c-c4d4-45af-a686-4145bcc9692d" />
+        <classShapeMoniker Id="d3b7455f-5850-4628-a140-93e4dbd6fb6e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.61099812825521); (6.25 : 3.61099812825521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WebmovieDataContext/TaiKhoan/TaiKhoan_HopPhim" />
+      <nodes>
+        <classShapeMoniker Id="0c909929-702c-4a57-91d0-15f0da247ca2" />
+        <classShapeMoniker Id="dc4c0116-3939-487a-911b-7b66b5526553" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.28125); (10.25 : 3.28125); (10.25 : 6.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WebmovieDataContext/TaiKhoan/TaiKhoan_LichSu" />
+      <nodes>
+        <classShapeMoniker Id="0c909929-702c-4a57-91d0-15f0da247ca2" />
+        <classShapeMoniker Id="94aa1617-cb3d-4897-a1e9-e6093c331ba9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.0256982421875); (3.9687475 : 9.0256982421875); (3.9687475 : 8.1651025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WebmovieDataContext/TheLoai/TheLoai_DSPhimBo" />
+      <nodes>
+        <classShapeMoniker Id="328007aa-1a01-49e4-b728-417e8755683e" />
+        <classShapeMoniker Id="9f404176-0eab-434f-a937-d0448a392912" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 8.78529860677083); (3.88541416666667 : 8.78529860677083 : JumpStart); (4.05208083333333 : 8.78529860677083 : JumpEnd); (4.41666666666667 : 8.78529860677083 : JumpStart); (4.58333333333333 : 8.78529860677083 : JumpEnd); (4.94791916666667 : 8.78529860677083 : JumpStart); (5.11458583333333 : 8.78529860677083 : JumpEnd); (7.5312525 : 8.78529860677083); (7.5312525 : 8.23240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WebmovieDataContext/TheLoai/TheLoai_DSPhimLe" />
+      <nodes>
+        <classShapeMoniker Id="328007aa-1a01-49e4-b728-417e8755683e" />
+        <classShapeMoniker Id="d3b7455f-5850-4628-a140-93e4dbd6fb6e" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
