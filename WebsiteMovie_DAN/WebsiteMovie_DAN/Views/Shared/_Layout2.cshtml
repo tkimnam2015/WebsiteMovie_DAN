@@ -1,0 +1,78 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using WebsiteMovie_DAN.Models;
+
+<div class="container clear_navar" style="padding-top: 70px">
+    <div class="row" style="clear: both">
+        <div class="col-xl-9 content-left" style="height: auto; background-color: white; border-radius: 10px;">
+
+            @RenderBody()
+
+        </div>
+        <div class="col-xl-3 content-right" style="height: auto;">
+
+            <div class="fb">
+                <div class="categorias">
+                    <h3>Like Page ủng hộ mình nha ^^</h3>
+                </div>
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fanimewithsound%2F&tabs=timeline&width=260&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="240" height="130" style="border: none; overflow: hidden; border-radius: 10px" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+
+
+
+
+
+                <div class="categorias">
+                    <h3>Top Phim</h3>
+                    @foreach (var item in ViewData["TopPhim"] as List<DSPhimBo>)
+                    {
+
+                        <div class="col-12">
+                            <div class="latest-movie-img-container">
+                                <div class="movie-img">
+                                    <img class="img-responsive lazy" src="~/Content/Images/@item.Img" style="display: block;">
+                                    <a href="~/ChiTietPhim/ChiTietPhim/@item.ID" class="ico-play ico-play-sm">
+                                        <svg class="svg-play" version="1.1" id="play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="100px" width="100px"
+                                             viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                                        <path class="stroke-solid" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+    C97.3,23.7,75.7,2.3,49.9,2.5" />
+                                        <path class="stroke-dotted" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+    C97.3,23.7,75.7,2.3,49.9,2.5" />
+                                        <path class="icon" fill="white" d="M38,69c-1,0.5-1.8,0-1.8-1.1V32.1c0-1.1,0.8-1.6,1.8-1.1l34,18c1,0.5,1,1.4,0,1.9L38,69z" />
+                                    </svg>
+                                    </a>
+                                    <div class="overlay-div"></div>
+                                    <div class="video_quality">
+                                        <span class="label-top label-primary-top">#Top                                        </span>
+                                    </div>
+                                    <div class="movie-title">
+                                        <h3>
+                                            <a href="#">@item.TenPhim</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function ConfirmXoa() {
+        if (confirm("Bạn có chắc muốn xóa Phim này không ?"))
+            return true;
+        else
+            return false;
+    }
+    FocusEvent = false;
+    checked = false;
+</script>
+
