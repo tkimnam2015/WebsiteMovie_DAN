@@ -1,4 +1,3 @@
-D:\Nam3\HK3_2021-2022\DoAnNganh\Code\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\KIMNAM\Desktop\TestDA\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\bin\roslyn\csc.exe
 C:\Users\KIMNAM\Desktop\TestDA\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\KIMNAM\Desktop\TestDA\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\bin\roslyn\Microsoft.CodeAnalysis.dll
@@ -120,6 +119,7 @@ D:\Nam3\HK3_2021-2022\DoAnNganh\Code\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMo
 D:\Nam3\HK3_2021-2022\DoAnNganh\Code\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\bin\roslyn\csi.exe.config
 D:\Nam3\HK3_2021-2022\DoAnNganh\Code\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\bin\roslyn\csi.rsp
 D:\Nam3\HK3_2021-2022\DoAnNganh\Code\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Nam3\HK3_2021-2022\DoAnNganh\Code\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 D:\Nam3\HK3_2021-2022\DoAnNganh\Code\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
 D:\Nam3\HK3_2021-2022\DoAnNganh\Code\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\bin\roslyn\Microsoft.CodeAnalysis.dll
 D:\Nam3\HK3_2021-2022\DoAnNganh\Code\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
