@@ -1,0 +1,34 @@
+﻿@using WebsiteMovie_DAN.Models
+@model List<tintucphim>
+@{
+    ViewBag.Title = "Tin Tức";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+@foreach (var item in Model)
+{
+    <div class="col-12" style="margin-top: 20px">
+        <div class="row">
+
+            <div class="col-xl-5">
+                <a href="~/Home/LuotXemTinTuc/@item.idtintuc">
+                    <img width="100%" style="height:200px" src="~/Content/Images/@item.hinhanh" />
+                </a>
+            </div>
+            <div class="col-xl-7">
+                <a href="~/Home/LuotXemTinTuc/@item.idtintuc">
+                    <span class="item-genre genre-2   has-background ">Tin tức mới</span>
+                </a>
+                <a href="~/TinTucPhim/ChiTietTinTuc/@item.idtintuc">
+                    <div class="tieude" style="margin-top: 10px">@item.tieude</div>
+                </a>
+                <div class="thoigian_luotxem" style="display: flex;">
+                    <div>@item.ngaycapnhat</div>
+                    <div style="margin-left: 20px">@item.luotxem lượt xem</div>
+                </div>
+                <div class="tomtat" style="margin-top: 10px">@item.tomtat</div>
+            </div>
+        </div>
+    </div>
+}
+
+

@@ -6,14 +6,16 @@ using System.Web.Mvc;
 using WebsiteMovie_DAN.Models;
 using PagedList;
 using PagedList.Mvc;
+using WebsiteMovie_DAN.Entity;
 namespace WebsiteMovie_DAN.Controllers
 {
     public class TimKiemController : Controller
     {
         //
         // GET: /TimKiem/
-        WebmovieDataContext data = new WebmovieDataContext();
-
+        WebmovieDataContext data = new WebmovieDataContext();//truy cập dữ liêu cua linQ
+        //kết nối entity để truy cập lịch sử
+        WebmoviedbEntities db = new WebmoviedbEntities();
         public ActionResult TimKiemTheLoai(int id)
         {
             var DSPhimBo = data.DSPhimBos.OrderByDescending(x => x.LuotXem).Take(3).ToList();

@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebmoviedbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Banner">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Img" Type="nvarchar(max)" />
+    <Property Name="IDPhim" Type="int" />
+  </EntityType>
+  <EntityType Name="CTTapPhim">
+    <Key>
+      <PropertyRef Name="IDPhim" />
+    </Key>
+    <Property Name="IDPhim" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TapPhim" Type="int" />
+    <Property Name="ID" Type="int" />
+    <Property Name="Link" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="DSPhimBo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenPhim" Type="nvarchar(max)" />
+    <Property Name="NoiDung" Type="nvarchar(max)" />
+    <Property Name="NamPhatHanh" Type="int" />
+    <Property Name="IDTheLoai" Type="int" />
+    <Property Name="ThoiLuong" Type="nvarchar" MaxLength="15" />
+    <Property Name="Img" Type="nvarchar(max)" />
+    <Property Name="MaQG" Type="int" />
+    <Property Name="LuotXem" Type="int" />
+  </EntityType>
+  <EntityType Name="DSPhimLe">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenPhim" Type="nvarchar(max)" />
+    <Property Name="NoiDung" Type="nvarchar(max)" />
+    <Property Name="NamPhatHanh" Type="int" />
+    <Property Name="IDTheLoai" Type="int" />
+    <Property Name="ThoiLuong" Type="nvarchar" MaxLength="15" />
+    <Property Name="Img" Type="nvarchar(max)" />
+    <Property Name="MaQG" Type="int" />
+    <Property Name="LuotXem" Type="int" />
+    <Property Name="Link" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Webmoviedb.dbo.gioithieu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="gioithieu">
+    <Key>
+      <PropertyRef Name="idgioitin" />
+    </Key>
+    <Property Name="idgioitin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="noidung" Type="nvarchar(max)" />
+    <Property Name="sdtlien" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="HopPhim">
+    <Key>
+      <PropertyRef Name="TenDN" />
+      <PropertyRef Name="IDPhim" />
+    </Key>
+    <Property Name="TenDN" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IDPhim" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LichSu">
+    <Key>
+      <PropertyRef Name="TenDN" />
+      <PropertyRef Name="IDPhim" />
+    </Key>
+    <Property Name="TenDN" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IDPhim" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Nam">
+    <Key>
+      <PropertyRef Name="MaNam" />
+    </Key>
+    <Property Name="MaNam" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenNam" Type="int" />
+  </EntityType>
+  <EntityType Name="QuocGia">
+    <Key>
+      <PropertyRef Name="MaQG" />
+    </Key>
+    <Property Name="MaQG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenQG" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="TenDN" />
+    </Key>
+    <Property Name="TenDN" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MatKhau" Type="varchar" MaxLength="50" />
+    <Property Name="Quyen" Type="bit" />
+  </EntityType>
+  <EntityType Name="TheLoai">
+    <Key>
+      <PropertyRef Name="IDTheLoai" />
+    </Key>
+    <Property Name="IDTheLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenTheLoai" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tintucphim">
+    <Key>
+      <PropertyRef Name="idtintuc" />
+    </Key>
+    <Property Name="idtintuc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tieude" Type="nvarchar(max)" />
+    <Property Name="tomtat" Type="nvarchar(max)" />
+    <Property Name="noidung" Type="nvarchar(max)" />
+    <Property Name="hinhanh" Type="nvarchar(max)" />
+    <Property Name="ngaycapnhat" Type="date" />
+    <Property Name="luotxem" Type="int" />
+  </EntityType>
+  <Association Name="FK__LichSu__IDPhim__4222D4EF">
+    <End Role="DSPhimBo" Type="Self.DSPhimBo" Multiplicity="1" />
+    <End Role="LichSu" Type="Self.LichSu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DSPhimBo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LichSu">
+        <PropertyRef Name="IDPhim" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LichSu__TenDN__4316F928">
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="1" />
+    <End Role="LichSu" Type="Self.LichSu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="TenDN" />
+      </Principal>
+      <Dependent Role="LichSu">
+        <PropertyRef Name="TenDN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Banner_DSPhimBo">
+    <End Role="DSPhimBo" Type="Self.DSPhimBo" Multiplicity="0..1" />
+    <End Role="Banner" Type="Self.Banner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DSPhimBo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Banner">
+        <PropertyRef Name="IDPhim" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTTapPhim_DSPhimBo">
+    <End Role="DSPhimBo" Type="Self.DSPhimBo" Multiplicity="0..1" />
+    <End Role="CTTapPhim" Type="Self.CTTapPhim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DSPhimBo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CTTapPhim">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSPhimBo_Nam">
+    <End Role="Nam" Type="Self.Nam" Multiplicity="0..1" />
+    <End Role="DSPhimBo" Type="Self.DSPhimBo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nam">
+        <PropertyRef Name="MaNam" />
+      </Principal>
+      <Dependent Role="DSPhimBo">
+        <PropertyRef Name="NamPhatHanh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSPhimBo_QuocGia">
+    <End Role="QuocGia" Type="Self.QuocGia" Multiplicity="0..1" />
+    <End Role="DSPhimBo" Type="Self.DSPhimBo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuocGia">
+        <PropertyRef Name="MaQG" />
+      </Principal>
+      <Dependent Role="DSPhimBo">
+        <PropertyRef Name="MaQG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSPhimBo_TheLoai">
+    <End Role="TheLoai" Type="Self.TheLoai" Multiplicity="0..1" />
+    <End Role="DSPhimBo" Type="Self.DSPhimBo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TheLoai">
+        <PropertyRef Name="IDTheLoai" />
+      </Principal>
+      <Dependent Role="DSPhimBo">
+        <PropertyRef Name="IDTheLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSPhimLe_Nam">
+    <End Role="Nam" Type="Self.Nam" Multiplicity="0..1" />
+    <End Role="DSPhimLe" Type="Self.DSPhimLe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nam">
+        <PropertyRef Name="MaNam" />
+      </Principal>
+      <Dependent Role="DSPhimLe">
+        <PropertyRef Name="NamPhatHanh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSPhimLe_QuocGia">
+    <End Role="QuocGia" Type="Self.QuocGia" Multiplicity="0..1" />
+    <End Role="DSPhimLe" Type="Self.DSPhimLe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuocGia">
+        <PropertyRef Name="MaQG" />
+      </Principal>
+      <Dependent Role="DSPhimLe">
+        <PropertyRef Name="MaQG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSPhimLe_TheLoai">
+    <End Role="TheLoai" Type="Self.TheLoai" Multiplicity="0..1" />
+    <End Role="DSPhimLe" Type="Self.DSPhimLe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TheLoai">
+        <PropertyRef Name="IDTheLoai" />
+      </Principal>
+      <Dependent Role="DSPhimLe">
+        <PropertyRef Name="IDTheLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HopPhim_DSPhimBo">
+    <End Role="DSPhimBo" Type="Self.DSPhimBo" Multiplicity="1" />
+    <End Role="HopPhim" Type="Self.HopPhim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DSPhimBo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HopPhim">
+        <PropertyRef Name="IDPhim" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HopPhim_TaiKhoan">
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="1" />
+    <End Role="HopPhim" Type="Self.HopPhim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="TenDN" />
+      </Principal>
+      <Dependent Role="HopPhim">
+        <PropertyRef Name="TenDN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WebmoviedbModelStoreContainer">
+    <EntitySet Name="Banner" EntityType="Self.Banner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CTTapPhim" EntityType="Self.CTTapPhim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DSPhimBo" EntityType="Self.DSPhimBo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DSPhimLe" EntityType="Self.DSPhimLe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HopPhim" EntityType="Self.HopPhim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LichSu" EntityType="Self.LichSu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nam" EntityType="Self.Nam" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuocGia" EntityType="Self.QuocGia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TheLoai" EntityType="Self.TheLoai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tintucphim" EntityType="Self.tintucphim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gioithieu" EntityType="Self.gioithieu" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [gioithieu].[idgioitin] AS [idgioitin], 
+    [gioithieu].[noidung] AS [noidung], 
+    [gioithieu].[sdtlien] AS [sdtlien]
+    FROM [dbo].[gioithieu] AS [gioithieu]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__LichSu__IDPhim__4222D4EF" Association="Self.FK__LichSu__IDPhim__4222D4EF">
+      <End Role="DSPhimBo" EntitySet="DSPhimBo" />
+      <End Role="LichSu" EntitySet="LichSu" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LichSu__TenDN__4316F928" Association="Self.FK__LichSu__TenDN__4316F928">
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+      <End Role="LichSu" EntitySet="LichSu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Banner_DSPhimBo" Association="Self.FK_Banner_DSPhimBo">
+      <End Role="DSPhimBo" EntitySet="DSPhimBo" />
+      <End Role="Banner" EntitySet="Banner" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTTapPhim_DSPhimBo" Association="Self.FK_CTTapPhim_DSPhimBo">
+      <End Role="DSPhimBo" EntitySet="DSPhimBo" />
+      <End Role="CTTapPhim" EntitySet="CTTapPhim" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSPhimBo_Nam" Association="Self.FK_DSPhimBo_Nam">
+      <End Role="Nam" EntitySet="Nam" />
+      <End Role="DSPhimBo" EntitySet="DSPhimBo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSPhimBo_QuocGia" Association="Self.FK_DSPhimBo_QuocGia">
+      <End Role="QuocGia" EntitySet="QuocGia" />
+      <End Role="DSPhimBo" EntitySet="DSPhimBo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSPhimBo_TheLoai" Association="Self.FK_DSPhimBo_TheLoai">
+      <End Role="TheLoai" EntitySet="TheLoai" />
+      <End Role="DSPhimBo" EntitySet="DSPhimBo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSPhimLe_Nam" Association="Self.FK_DSPhimLe_Nam">
+      <End Role="Nam" EntitySet="Nam" />
+      <End Role="DSPhimLe" EntitySet="DSPhimLe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSPhimLe_QuocGia" Association="Self.FK_DSPhimLe_QuocGia">
+      <End Role="QuocGia" EntitySet="QuocGia" />
+      <End Role="DSPhimLe" EntitySet="DSPhimLe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSPhimLe_TheLoai" Association="Self.FK_DSPhimLe_TheLoai">
+      <End Role="TheLoai" EntitySet="TheLoai" />
+      <End Role="DSPhimLe" EntitySet="DSPhimLe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HopPhim_DSPhimBo" Association="Self.FK_HopPhim_DSPhimBo">
+      <End Role="DSPhimBo" EntitySet="DSPhimBo" />
+      <End Role="HopPhim" EntitySet="HopPhim" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HopPhim_TaiKhoan" Association="Self.FK_HopPhim_TaiKhoan">
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+      <End Role="HopPhim" EntitySet="HopPhim" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
