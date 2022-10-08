@@ -1,31 +1,283 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "NamLoc Movie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using WebsiteMovie_DAN.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<DSPhimBo>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="clear_navar container" style="width: 100%; padding-top: 60px;">
+
+    <div class="slider-container">
+        <div class="slider-control left inactive"></div>
+        <div class="slider-control right"></div>
+        <ul class="slider-pagi"></ul>
+        <div class="slider">
+            @foreach (var item in ViewData["Banner1"] as List<Banner>)
+            {
+                <div class="slide slide-0 active">
+                    <img class="slide__bg" src="~/Content/Images/@item.Img" />
+                    <div class="slide__content">
+                        <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                            <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                        </svg>
+                        <div class="slide__text">
+                            <h2 class="slide__text-heading">@item.DSPhimBo.TenPhim</h2>
+                            <p class="slide__text-desc">@item.DSPhimBo.NoiDung</p>
+
+                            <a class="slide-text-link">Xem Phim</a>
+                        </div>
+                    </div>
+                </div>
+            }
+            @foreach (var item in ViewData["Banner2"] as List<Banner>)
+            {
+                <div class="slide slide-1 ">
+                    <img class="slide__bg" src="~/Content/Images/@item.Img" />
+                    <div class="slide__content">
+                        <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                            <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                        </svg>
+                        <div class="slide__text">
+                            <h2 class="slide__text-heading">@item.DSPhimBo.TenPhim</h2>
+                            <p class="slide__text-desc">@item.DSPhimBo.NoiDung</p>
+                            <a class="slide-text-link">Xem Phim</a>
+                        </div>
+                    </div>
+                </div>
+            }
+            @foreach (var item in ViewData["Banner3"] as List<Banner>)
+            {
+                <div class="slide slide-2">
+                    <img class="slide__bg" src="~/Content/Images/@item.Img" />
+                    <div class="slide__content">
+                        <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                            <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                        </svg>
+                        <div class="slide__text">
+                            <h2 class="slide__text-heading">@item.DSPhimBo.TenPhim</h2>
+                            <p class="slide__text-desc">@item.DSPhimBo.NoiDung</p>
+                            <a class="slide-text-link">Xem Phim</a>
+                        </div>
+                    </div>
+                </div>
+            }
+            @foreach (var item in ViewData["Banner4"] as List<Banner>)
+            {
+                <div class="slide slide-3">
+                    <img class="slide__bg" src="~/Content/Images/@item.Img" />
+                    <div class="slide__content">
+                        <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                            <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                        </svg>
+                        <div class="slide__text">
+                            <h2 class="slide__text-heading">@item.DSPhimBo.TenPhim</h2>
+                            <p class="slide__text-desc">@item.DSPhimBo.NoiDung</p>
+                            <a class="slide-text-link">Xem Phim</a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+
+<!-- ##### nội dung ##### -->
+<div class="container clear_navar">
+
+    <div class="row" style="clear: both">
+
+        <div class="col-xl-9 content-left" style="height: auto">
+
+            <section id="tabs">
+                <div class="container">
+                    <div class="row" style="padding-top: 10px">
+                        <div class="col-12 ">
+                            <nav>
+                                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Phim Cập Nhật</a>
+                                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Hot Ngày</a>
+                                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Hot tuần</a>
+
+                                </div>
+                            </nav>
+                            <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+                                    <div class="row" style="padding: 10px">
+                                        @foreach (var item in Model)
+                                        {
+                                            <div class="col-md-3 col-sm-4 col-6" style="margin-top: 10px">
+
+                                                <div class="latest-movie-img-container">
+                                                    <div class="movie-img">
+                                                        <a href="~/ChiTietPhim/ChiTietPhim/@item.ID">
+                                                            <img class="img-responsive lazy" src="~/Content/Images/@item.Img" style="display: block;">
+                                                        </a>
+                                                        <a href="~/ChiTietPhim/ChiTietPhim/@item.ID" class="ico-play ico-play-sm">
+                                                            <svg class="svg-play" version="1.1" id="play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="100px" width="100px"
+                                                                 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                                                            <path class="stroke-solid" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+    C97.3,23.7,75.7,2.3,49.9,2.5" />
+                                                            <path class="stroke-dotted" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+    C97.3,23.7,75.7,2.3,49.9,2.5" />
+                                                            <path class="icon" fill="white" d="M38,69c-1,0.5-1.8,0-1.8-1.1V32.1c0-1.1,0.8-1.6,1.8-1.1l34,18c1,0.5,1,1.4,0,1.9L38,69z" />
+                                                            </svg>
+                                                        </a>
+                                                        <a href="~/ChiTietPhim/ChiTietPhim/@item.ID">
+                                                            <div class="overlay-div"></div>
+                                                        </a>
+
+                                                        <div class="video_quality">
+                                                            <span class="label label-primary">
+                                                                @item.ThoiLuong
+                                                            </span>
+                                                        </div>
+
+                                                        <div class="movie-title">
+                                                            <h3>
+                                                                <a href="~/ChiTietPhim/ChiTietPhim">@item.TenPhim</a>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        }
+
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+                        <div>
+                            @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+                        </div>
+
+                        <link href="~/Content/PagedList.css" rel="stylesheet" />
+                    </div>
+            </section>
+
+
+            <div class="content-2">
+
+
+
+                <div>
+                    <h2 style="color: #43a6df; font-size: 20px; text-align: center; padding-top: 10px">Phim Lẻ</h2>
+                </div>
+
+                <div class="row" style="padding: 10px">
+                    @foreach (var item in ViewData["DSPhimLe"] as List<DSPhimLe>)
+                    {
+                        <div class="col-md-3 col-sm-4 col-6" style="margin-top: 10px">
+
+                            <div class="latest-movie-img-container">
+                                <div class="movie-img">
+                                    <a href="~/ChiTietPhim/ChiTietPhimLe/@item.ID">
+                                        <img class="img-responsive lazy" src="~/Content/Images/@item.Img" style="display: block;">
+                                    </a>
+                                    <a href="~/ChiTietPhim/ChiTietPhimLe/@item.ID" class="ico-play ico-play-sm">
+                                        <svg class="svg-play" version="1.1" id="play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="100px" width="100px"
+                                             viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                                        <path class="stroke-solid" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+    C97.3,23.7,75.7,2.3,49.9,2.5" />
+                                        <path class="stroke-dotted" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+    C97.3,23.7,75.7,2.3,49.9,2.5" />
+                                        <path class="icon" fill="white" d="M38,69c-1,0.5-1.8,0-1.8-1.1V32.1c0-1.1,0.8-1.6,1.8-1.1l34,18c1,0.5,1,1.4,0,1.9L38,69z" />
+                                        </svg>
+                                    </a>
+                                    <a href="~/ChiTietPhim/ChiTietPhimLe/@item.ID">
+                                        <div class="overlay-div"></div>
+                                    </a>
+
+                                    <div class="video_quality">
+                                        <span class="label label-primary">
+                                            @item.ThoiLuong
+                                        </span>
+                                    </div>
+                                    <div class="movie-title">
+                                        <h3>
+                                            <a href="~/ChiTietPhim/ChiTietPhimLe">@item.TenPhim</a>
+                                        </h3>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    }
+
+                </div>
+
+
+                <button type="button" class="btn btn-danger" style="width: 150px; height: 30px; font-size: 12px; margin-left: 43%; margin-bottom: 10px">Xem Thêm</button>
+
+            </div>
+
+        </div>
+        <div class="col-xl-3 content-right" style="height: auto; padding-top: 20px;">
+
+            <div class="fb">
+                <div class="categorias">
+                    <h3>Like Page ủng hộ mình nha ^^</h3>
+                </div>
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fanimewithsound%2F&tabs=timeline&width=260&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="240" height="500" style="border: none; overflow: hidden; border-radius: 10px" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+
+
+
+
+
+                <div class="categorias">
+                    <h3>Top Phim</h3>
+                    @foreach (var item in ViewData["TopPhim"] as List<DSPhimBo>)
+                    {
+
+                        <div class="col-12">
+                            <div class="latest-movie-img-container">
+                                <div class="movie-img">
+                                    <img class="img-responsive lazy" src="~/Content/Images/@item.Img" style="display: block;">
+                                    <a href="~/ChiTietPhim/ChiTietPhim/@item.ID" class="ico-play ico-play-sm">
+                                        <svg class="svg-play" version="1.1" id="play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="100px" width="100px"
+                                             viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                                        <path class="stroke-solid" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+    C97.3,23.7,75.7,2.3,49.9,2.5" />
+                                        <path class="stroke-dotted" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+    C97.3,23.7,75.7,2.3,49.9,2.5" />
+                                        <path class="icon" fill="white" d="M38,69c-1,0.5-1.8,0-1.8-1.1V32.1c0-1.1,0.8-1.6,1.8-1.1l34,18c1,0.5,1,1.4,0,1.9L38,69z" />
+                                    </svg>
+                                    </a>
+                                    <div class="overlay-div"></div>
+                                    <div class="video_quality">
+                                        <span class="label-top label-primary-top">#Top                                            </span>
+                                    </div>
+                                    <div class="movie-title">
+                                        <h3>
+                                            <a href="#">@item.TenPhim</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+
+            </div>
+
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
