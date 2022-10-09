@@ -186,6 +186,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TimKiemController.cs" />
     <Compile Include="Controllers\TinTucPhimController.cs" />
+    <Compile Include="Controllers\XemSauController.cs" />
     <Compile Include="Entity\Banner.cs">
       <DependentUpon>DataEntity.tt</DependentUpon>
     </Compile>
@@ -242,6 +243,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Webmovie.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\XemSau.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -332,6 +334,7 @@
     <Content Include="Views\GioiThieu\GioiThieuWebXemPhimSo1VietNam.cshtml" />
     <Content Include="Views\TinTucPhim\TinTuc.cshtml" />
     <Content Include="Views\TinTucPhim\ChiTietTinTuc.cshtml" />
+    <Content Include="Views\XemSau\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
