@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WebmoviedbModelStoreContainer" CdmEntityContainer="WebmoviedbEntities">
+    <EntitySetMapping Name="Banners">
+      <EntityTypeMapping TypeName="WebmoviedbModel.Banner">
+        <MappingFragment StoreEntitySet="Banner">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+          <ScalarProperty Name="IDPhim" ColumnName="IDPhim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CTTapPhims">
+      <EntityTypeMapping TypeName="WebmoviedbModel.CTTapPhim">
+        <MappingFragment StoreEntitySet="CTTapPhim">
+          <ScalarProperty Name="IDPhim" ColumnName="IDPhim" />
+          <ScalarProperty Name="TapPhim" ColumnName="TapPhim" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DSPhimBoes">
+      <EntityTypeMapping TypeName="WebmoviedbModel.DSPhimBo">
+        <MappingFragment StoreEntitySet="DSPhimBo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenPhim" ColumnName="TenPhim" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="NamPhatHanh" ColumnName="NamPhatHanh" />
+          <ScalarProperty Name="IDTheLoai" ColumnName="IDTheLoai" />
+          <ScalarProperty Name="ThoiLuong" ColumnName="ThoiLuong" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+          <ScalarProperty Name="MaQG" ColumnName="MaQG" />
+          <ScalarProperty Name="LuotXem" ColumnName="LuotXem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DSPhimLes">
+      <EntityTypeMapping TypeName="WebmoviedbModel.DSPhimLe">
+        <MappingFragment StoreEntitySet="DSPhimLe">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenPhim" ColumnName="TenPhim" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="NamPhatHanh" ColumnName="NamPhatHanh" />
+          <ScalarProperty Name="IDTheLoai" ColumnName="IDTheLoai" />
+          <ScalarProperty Name="ThoiLuong" ColumnName="ThoiLuong" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+          <ScalarProperty Name="MaQG" ColumnName="MaQG" />
+          <ScalarProperty Name="LuotXem" ColumnName="LuotXem" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nams">
+      <EntityTypeMapping TypeName="WebmoviedbModel.Nam">
+        <MappingFragment StoreEntitySet="Nam">
+          <ScalarProperty Name="MaNam" ColumnName="MaNam" />
+          <ScalarProperty Name="TenNam" ColumnName="TenNam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuocGias">
+      <EntityTypeMapping TypeName="WebmoviedbModel.QuocGia">
+        <MappingFragment StoreEntitySet="QuocGia">
+          <ScalarProperty Name="MaQG" ColumnName="MaQG" />
+          <ScalarProperty Name="TenQG" ColumnName="TenQG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaiKhoans">
+      <EntityTypeMapping TypeName="WebmoviedbModel.TaiKhoan">
+        <MappingFragment StoreEntitySet="TaiKhoan">
+          <ScalarProperty Name="TenDN" ColumnName="TenDN" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="Quyen" ColumnName="Quyen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TheLoais">
+      <EntityTypeMapping TypeName="WebmoviedbModel.TheLoai">
+        <MappingFragment StoreEntitySet="TheLoai">
+          <ScalarProperty Name="IDTheLoai" ColumnName="IDTheLoai" />
+          <ScalarProperty Name="TenTheLoai" ColumnName="TenTheLoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tintucphims">
+      <EntityTypeMapping TypeName="WebmoviedbModel.tintucphim">
+        <MappingFragment StoreEntitySet="tintucphim">
+          <ScalarProperty Name="idtintuc" ColumnName="idtintuc" />
+          <ScalarProperty Name="tieude" ColumnName="tieude" />
+          <ScalarProperty Name="tomtat" ColumnName="tomtat" />
+          <ScalarProperty Name="noidung" ColumnName="noidung" />
+          <ScalarProperty Name="hinhanh" ColumnName="hinhanh" />
+          <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+          <ScalarProperty Name="luotxem" ColumnName="luotxem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gioithieux">
+      <EntityTypeMapping TypeName="WebmoviedbModel.gioithieu">
+        <MappingFragment StoreEntitySet="gioithieu">
+          <ScalarProperty Name="idgioitin" ColumnName="idgioitin" />
+          <ScalarProperty Name="noidung" ColumnName="noidung" />
+          <ScalarProperty Name="sdtlien" ColumnName="sdtlien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="HopPhim" TypeName="WebmoviedbModel.HopPhim" StoreEntitySet="HopPhim">
+      <EndProperty Name="DSPhimBo">
+        <ScalarProperty Name="ID" ColumnName="IDPhim" />
+      </EndProperty>
+      <EndProperty Name="TaiKhoan">
+        <ScalarProperty Name="TenDN" ColumnName="TenDN" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="LichSu" TypeName="WebmoviedbModel.LichSu" StoreEntitySet="LichSu">
+      <EndProperty Name="DSPhimBo">
+        <ScalarProperty Name="ID" ColumnName="IDPhim" />
+      </EndProperty>
+      <EndProperty Name="TaiKhoan">
+        <ScalarProperty Name="TenDN" ColumnName="TenDN" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
