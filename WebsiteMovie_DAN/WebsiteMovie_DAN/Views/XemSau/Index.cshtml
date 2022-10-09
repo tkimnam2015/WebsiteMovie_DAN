@@ -1,0 +1,62 @@
+﻿@using WebsiteMovie_DAN.Models;
+@model List<HopPhim>
+@{
+    ViewBag.Title = "Xem sau - NamLoc Movie";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h3 style="color: #43a6df; font-size: 19px; margin-top: 10px; margin-left: 10px; border-bottom: 2px solid #43a6df">Danh Sách Xem sau</h3>
+<div class="card-body">
+    <div class="row" style="padding: 10px">
+        <table class="table table-bordered" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th style="text-align: center">ID Phim</th>
+                    <th style="text-align: center">Tên Phim</th>
+                    <th style="text-align: center">Hình</th>
+                    <th style="text-align: center">Chức năng</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="text-align: center; padding-top: 50px">@item.DSPhimBo.ID</td>
+                        <td style="text-align: center; padding-top: 50px">@item.DSPhimBo.TenPhim</td>
+                        <td style="text-align: center">
+                            <img style="width:120px;height:150px" src="~/Content/Images/@item.DSPhimBo.Img" />
+                        </td>
+                        <td style="text-align: center; padding-top: 50px">
+                            <button type="button" class="btn btn-success">
+                                <a href="~/ChiTietPhim/ChiTietPhim/@item.DSPhimBo.ID">
+                                    Xem
+                                </a>
+                            </button>
+                            <button type="button" class="btn btn-danger">
+                                <a onclick="return ConfirmXoa()" href="@Url.Action("XoaXemSau", new { tendn = item.TenDN,idphim=item.IDPhim })">
+                                    Xóa
+                                </a>
+
+                            </button>
+
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script>
+    function ConfirmXoa() {
+        if (confirm("Bạn có chắc muốn xóa Phim này không ?"))
+            return true;
+        else
+            return false;
+    }
+    FocusEvent = false;
+    checked = false;
+</script>
+

@@ -1,0 +1,87 @@
+﻿@using WebsiteMovie_DAN.Models;
+@{
+    ViewBag.Title = "XemPhimLe";
+}
+
+<div class="container clear_navar" style="padding-top: 60px;">
+    <div>
+        <div class="col-xl-10" style="height: auto; margin: auto">
+            <div class="">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <fieldset>
+                        <legend></legend>
+                        @foreach (var item in Model)
+                        {
+
+                            <iframe width="560" height="315" src="@item.Link?rel=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        }
+                    </fieldset>
+
+                </div>
+            </div>
+            <div class="metax1">
+                <div id="bar_info_fix" class="bar_info02" style="margin: 0;">
+                    <p style="color: #ffffff; font-size: 14px; padding: 5px 0; cursor: pointer; background-color: #318CCA; text-align: center">Lưu ý: đây là dòng để trang trí ^^</p>
+                </div>
+                <div class="bar_info">
+                    <ul class="list_bar">
+                        <li>
+                            <a class="bar_ani4u" style="cursor: pointer" onclick="togglecomments('an_hien_baoloi');">
+                                <i class="fas fa-exclamation-circle material-icons"></i>
+                                <br>
+                                Báo lỗi phim
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="bar_ani4u" style="cursor: pointer" onclick="window.location.reload()">
+                                <i class="fas fa-sync-alt material-icons"></i>
+                                <br>
+                                Tải lại trang
+                            </a>
+                        </li>
+                        <a class="bar_ani4u" style="cursor: pointer"></a>
+                    </ul>
+                    <div id="aniclass" style="background: #000;"></div>
+                </div>
+
+            </div>
+            <div style="background-color: #ffffff; border-radius: 10px">
+                <div style="margin-bottom: 10px; margin: 10px">
+                    <fieldset>
+                        <legend>
+
+                            @foreach (var item in Model)
+                            {
+                                <a href="~/ChiTietPhim/ChiTietPhimLe/@item.ID" style="font-size: 18px; font-weight: 700; color: #000000; font-weight: bold;">@item.TenPhim</a>
+                            }
+                        </legend>
+
+
+                    </fieldset>
+                </div>
+
+            </div>
+            <script>
+                // Add active class to the current button (highlight it)
+                var header = document.getElementsByClassName("myDIV");
+                var btns = header.getElementsByClassName("btn");
+                for (var i = 0; i < btns.length; i++) {
+                    btns[i].addEventListener("click", function () {
+                        var current = document.getElementsByClassName("active");
+                        current[0].className = current[0].className.replace(" active", "");
+                        this.className += " active";
+                    });
+                }
+            </script>
+
+            <div id="cmt-1" style="background-color: #fff; border-radius: 10px; margin-top: 15px;">
+                <div class="fb-comments " data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="5"></div>
+                <div id="fb-root"></div>
+                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v4.0"></script>
+            </div>
+
+        </div>
+
+    </div>
+</div>

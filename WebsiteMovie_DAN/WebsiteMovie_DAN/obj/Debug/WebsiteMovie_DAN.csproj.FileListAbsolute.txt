@@ -449,3 +449,5 @@ C:\Users\window\Desktop\New folder\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovi
 C:\Users\window\Desktop\New folder\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\obj\Debug\WebsiteMovie_DAN.csproj.CopyComplete
 C:\Users\window\Desktop\New folder\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\obj\Debug\WebsiteMovie_DAN.dll
 C:\Users\window\Desktop\New folder\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\obj\Debug\WebsiteMovie_DAN.pdb
+D:\Nam3\HK3_2021-2022\DoAnNganh\Code\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\bin\Facebook.dll
+D:\Nam3\HK3_2021-2022\DoAnNganh\Code\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\bin\Facebook.xml
