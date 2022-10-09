@@ -186,6 +186,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TimKiemController.cs" />
     <Compile Include="Controllers\TinTucPhimController.cs" />
+    <Compile Include="Controllers\XemPhimController.cs" />
     <Compile Include="Controllers\XemSauController.cs" />
     <Compile Include="Entity\Banner.cs">
       <DependentUpon>DataEntity.tt</DependentUpon>
@@ -335,6 +336,8 @@
     <Content Include="Views\TinTucPhim\TinTuc.cshtml" />
     <Content Include="Views\TinTucPhim\ChiTietTinTuc.cshtml" />
     <Content Include="Views\XemSau\Index.cshtml" />
+    <Content Include="Views\XemPhim\XemPhim.cshtml" />
+    <Content Include="Views\XemPhim\XemPhimLe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
