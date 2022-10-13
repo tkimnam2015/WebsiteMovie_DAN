@@ -1,0 +1,182 @@
+﻿@model WebsiteMovie_DAN.Models.DSPhimLe
+@using WebsiteMovie_DAN.Models;
+
+@{
+    ViewBag.Title = "Chi Tiết Phim lẻ - NamLoc Movie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<fieldset>
+    <legend></legend>
+    <!-- ##### Nội dung ##### -->
+    <div class="container clear_navar" style="padding-top: 60px;">
+        <div class="row">
+
+            <div class="col-xl-8" style="height: auto; padding-top: 40px;">
+                <div class=" detail">
+                    <div class="row" style="margin: 10px">
+
+                        <div class="col-12 col-sm-4 col-md-4 ">
+
+                            <img width="100%" src="~/Content/Images/@Model.Img" />
+                        </div>
+                        <div class="col-12 col-sm-8 col-md-8">
+                            <div class="tieude-tail">
+                                <h4>
+                                    <p>
+                                        <a style="color: #000000; font-size: 22px">@Model.TenPhim</a>
+                                    </p>
+                                </h4>
+                            </div>
+
+                            <div class="chitiet" style="padding-top: 20px">
+                                <table>
+                                    <tr>
+                                        <td width="100px" style="color: #000; font-weight: bold;">Thời Lượng</td>
+                                        <td>@Model.ThoiLuong</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #000; font-weight: bold;">Quốc gia</td>
+                                        <td><a>@Model.QuocGia.TenQG</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #000; font-weight: bold;">Thể loại</td>
+                                        <td>@Model.TheLoai.TenTheLoai</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #000; font-weight: bold;">Phát hành</td>
+                                        <td data-v-7c633b6c=""><a>@Model.Nam.TenNam</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+
+
+                            <div style="padding-top: 25px;">
+                                <a class="rotate-button" href="@Url.Action("LuotXemPhimLe", "Home", new { id = @Model.ID })">
+                                    <span class="rotate-button-face">Xem Phim</span>
+                                    <span class="rotate-button-face-back">Xem Phim</span>
+                                </a>
+                                @*<a class="rotate-button"href="@Url.Action("ThemVaoXemSau","XemSau", new { tendn=Session["TK"],idphim=@Model.ID })">*@
+                                <a class="rotate-button" href="@Url.Action("ThemVaoXemSau", "XemSau", new { tendn = Session["TK"], idphim = @Model.ID })">
+                                    <span class="rotate-button-face">Xem sau</span>
+                                    <span class="rotate-button-face-back">Xem sau</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="film-desc" style="padding-top: 15px; margin: 20px">
+                        <span style="color:black"><b>Nội dung</b></span>
+                        <div id="summary">
+                            <p class="collapse" id="collapseSummary" style="color: #000000">
+                                @Model.NoiDung
+                            </p>
+                            <a class="collapsed" data-toggle="collapse" href="#collapseSummary" aria-expanded="false" aria-controls="collapseSummary"></a>
+                            <div class="row" style="margin-top: 10px">
+                                <img src="~/Content/Images/bannerbietdoibathao.jpg" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="cmt-1" style="background-color: #fff; border-radius: 10px; margin-top: 15px;">
+                    <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="5"></div>
+                    <div id="fb-root"></div>
+                    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v4.0"></script>
+                </div>
+
+            </div>
+
+
+
+            <div class="col-xl-4 content-right" style="height: auto">
+
+                <div class="fb-2">
+                    <div class="categorias">
+                        <h3>Like Page ủng hộ mình nha ^^</h3>
+                    </div>
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fanimewithsound%2F&tabs&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="340" height="130" style="border-radius: 10px; border: none; overflow: hidden" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                </div>
+                <div style="background-color: #fff; border-radius: 10px">
+                    <div class="categorias">
+                        <h3>Top Phim</h3>
+                    </div>
+
+                    @foreach (var item in ViewData["TopPhim"] as List<DSPhimLe>)
+                    {
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="latest-movie-img-container-2" style="margin: 10px">
+                                    <div class="movie-img">
+                                        <img class="img-responsive-2 lazy" src="~/Content/Images/@item.Img" style="display: block;">
+                                        <a href="https://masterani.one/watch/saga-of-tanya-the-evil-movie.html" class="ico-play ico-play-sm">
+                                            <svg class="svg-play" version="1.1" id="play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="100px" width="100px"
+                                                 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                                            <path class="stroke-solid" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+    C97.3,23.7,75.7,2.3,49.9,2.5" />
+                                            <path class="stroke-dotted" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+    C97.3,23.7,75.7,2.3,49.9,2.5" />
+                                            <path class="icon" fill="white" d="M38,69c-1,0.5-1.8,0-1.8-1.1V32.1c0-1.1,0.8-1.6,1.8-1.1l34,18c1,0.5,1,1.4,0,1.9L38,69z" />
+                                        </svg>
+                                        </a>
+                                        <div class="overlay-div"></div>
+                                        <div class="video_quality">
+                                            <span class="label-top label-primary-top">#                                         </span>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                            <div class="col-7">
+                                <div class="list-top">
+                                    <br>
+
+                                    <span class="list-top-item-tit">@item.TenPhim</span>
+                                    <br>
+
+                                    <span class="list-top-item-ep"> @item.ThoiLuong </span>
+                                    <br>
+
+                                    <span class="list-top-item-view">@item.LuotXem Lượt Xem</span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    }
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+</fieldset>
+
+
+<script>
+    function ConfirmDangNhap() {
+        if (confirm("Bạn phải đăng nhập !! Bạn có muốn đăng nhập không ?"))
+            return true;
+        else
+            return false;
+    }
+    FocusEvent = false;
+    checked = false;
+</script>
+
+<script>
+    function ThongBao() {
+        alert("Bạn có muốn đăng xuất không??/")
+    }
+    FocusEvent = false;
+    checked = false;
+</script>
+
