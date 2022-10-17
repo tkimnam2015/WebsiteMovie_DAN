@@ -184,6 +184,7 @@
     <Compile Include="Controllers\DangNhapDangKyController.cs" />
     <Compile Include="Controllers\GioiThieuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LichSuXemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TimKiemController.cs" />
     <Compile Include="Controllers\TinTucPhimController.cs" />
@@ -341,6 +342,7 @@
     <Content Include="Views\XemPhim\XemPhimLe.cshtml" />
     <Content Include="Views\ChiTietPhim\ChiTietPhim.cshtml" />
     <Content Include="Views\ChiTietPhim\ChiTietPhimLe.cshtml" />
+    <Content Include="Views\LichSuXem\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
