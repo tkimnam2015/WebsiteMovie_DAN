@@ -109,6 +109,7 @@
       <Column Name="TenDN" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MatKhau" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Quyen" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="TaiKhoan_HopPhim" Member="HopPhims" ThisKey="TenDN" OtherKey="TenDN" Type="HopPhim" />
       <Association Name="TaiKhoan_LichSu" Member="LichSus" ThisKey="TenDN" OtherKey="TenDN" Type="LichSu" />
     </Type>
