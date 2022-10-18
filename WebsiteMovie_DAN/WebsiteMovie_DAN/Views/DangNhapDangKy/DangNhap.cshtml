@@ -18,6 +18,7 @@
                             <form class="form-signin">
                                 <div class="form-label-group">
                                     @* <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>*@
+                                    <h2>Tên đăng nhập</h2>
                                     @Html.TextBox("TenDN", null, new { @class = "form-control" })
                                     @ViewData["Loi"]
                                     @ViewData["Loi12"]
@@ -25,7 +26,8 @@
                                 </div>
                                 <div class="form-label-group">
                                     @*<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>*@
-                                    @Html.Password("MatKhau", null, new { @class = "form-control", })
+                                    <h2>Mật khẩu</h2>
+                                    @Html.Password("MatKhau", null, new { @class = "form-control" })
                                     @ViewData["Loi1"]
                                     @ViewData["Loi2"]
                                 </div>
@@ -42,6 +44,7 @@
                                 <div style="padding-top: 10px; margin-left: 5px;">
 
                                     <a style="color: #0094ff" href="~/DangNhapDangKy/DangKy">Đăng ký tài khoản</a>
+                                    <a style="padding-left: 180px; color: #0094ff" href="#">Quên mật khẩu ?</a>
                                 </div>
                             </form>
                         </div>
