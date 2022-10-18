@@ -2309,6 +2309,8 @@ namespace WebsiteMovie_DAN.Models
 		
 		private System.Nullable<bool> _Quyen;
 		
+		private string _Email;
+		
 		private EntitySet<HopPhim> _HopPhims;
 		
 		private EntitySet<LichSu> _LichSus;
@@ -2323,6 +2325,8 @@ namespace WebsiteMovie_DAN.Models
     partial void OnMatKhauChanged();
     partial void OnQuyenChanging(System.Nullable<bool> value);
     partial void OnQuyenChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
     #endregion
 		
 		public TaiKhoan()
@@ -2388,6 +2392,26 @@ namespace WebsiteMovie_DAN.Models
 					this._Quyen = value;
 					this.SendPropertyChanged("Quyen");
 					this.OnQuyenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
 				}
 			}
 		}

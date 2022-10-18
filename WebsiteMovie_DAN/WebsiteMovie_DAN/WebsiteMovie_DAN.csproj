@@ -59,6 +59,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -67,6 +70,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.9\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -179,6 +185,11 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TaiKhoanController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ChiTietPhimController.cs" />
     <Compile Include="Controllers\DangNhapDangKyController.cs" />
@@ -272,11 +283,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Models\Webmovie.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>Webmovie.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </Content>
     <EntityDeploy Include="Entity\DataEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DataEntity.Designer.cs</LastGenOutput>
@@ -284,6 +290,18 @@
     <Content Include="Entity\DataEntity.edmx.diagram">
       <DependentUpon>DataEntity.edmx</DependentUpon>
     </Content>
+    <Content Include="Models\Webmovie.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Webmovie.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Home.cshtml" />
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\TaiKhoan\DSTaiKhoan.cshtml" />
+    <Content Include="Areas\Admin\Views\TaiKhoan\ThemTK.cshtml" />
+    <Content Include="Areas\Admin\Views\TaiKhoan\SuaTK.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -346,6 +364,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
