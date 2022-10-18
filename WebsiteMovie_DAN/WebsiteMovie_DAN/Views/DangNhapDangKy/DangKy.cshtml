@@ -14,19 +14,28 @@
                         <h5 class="card-title text-center">Đăng ký</h5>
                         <form class="form-signin">
                             <div class="form-label-group">
+                                <h2>Tên đăng nhập</h2>
                                 @Html.TextBox("TenDN", null, new { @class = "form-control" })
                                 @ViewData["Loi2"]
                                 @ViewData["Loi"]
                             </div>
 
                             <div class="form-label-group">
+                                <h2>Mật khẩu</h2>
                                 @Html.Password("MatKhau", null, new { @class = "form-control", })
                                 @ViewData["Loi"]
 
                             </div>
                             <div class="form-label-group">
+                                <h2>Xác nhận mật khẩu</h2>
                                 @Html.Password("MatKhauNhapLai", null, new { @class = "form-control", })
                                 @ViewData["Loi12"]
+                            </div>
+                            <div class="form-label-group">
+                                <h2>Email</h2>
+                                @Html.TextBox("Email", null, new { @class = "form-control" })
+                                @ViewData["Loi2"]
+                                @ViewData["Loi"]
                             </div>
 
 
