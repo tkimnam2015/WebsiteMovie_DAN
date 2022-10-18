@@ -569,3 +569,7 @@ D:\Nam3\HK3_2021-2022\DoAnNganh\Code\WebsiteMovie_DAN\WebsiteMovie_DAN\obj\Debug
 D:\Nam3\HK3_2021-2022\DoAnNganh\Code\WebsiteMovie_DAN\WebsiteMovie_DAN\obj\Debug\WebsiteMovie_DAN.csproj.CopyComplete
 D:\Nam3\HK3_2021-2022\DoAnNganh\Code\WebsiteMovie_DAN\WebsiteMovie_DAN\obj\Debug\WebsiteMovie_DAN.dll
 D:\Nam3\HK3_2021-2022\DoAnNganh\Code\WebsiteMovie_DAN\WebsiteMovie_DAN\obj\Debug\WebsiteMovie_DAN.pdb
+D:\Nam3\HK3_2021-2022\DoAnNganh\Code\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\bin\System.Net.Http.Formatting.dll
+D:\Nam3\HK3_2021-2022\DoAnNganh\Code\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\bin\System.Web.Http.dll
+D:\Nam3\HK3_2021-2022\DoAnNganh\Code\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\bin\System.Net.Http.Formatting.xml
+D:\Nam3\HK3_2021-2022\DoAnNganh\Code\WebsiteMovie_DAN\WebsiteMovie_DAN\WebsiteMovie_DAN\bin\System.Web.Http.xml
