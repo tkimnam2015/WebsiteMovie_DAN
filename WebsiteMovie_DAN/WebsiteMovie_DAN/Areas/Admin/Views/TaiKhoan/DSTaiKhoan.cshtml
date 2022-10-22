@@ -23,7 +23,7 @@
                     <tr>
                         <th>Tên đăng nhập</th>
                         <th>Mật khẩu</th>
-                        <th>Quản Trị</th>
+                        <th>Quyền truy cập</th>
                         <th>Email</th>
                         <th style="text-align: center">Chức năng</th>
                     </tr>
@@ -32,7 +32,7 @@
                     <tr>
                         <th>Tên đăng nhập</th>
                         <th>Mật khẩu</th>
-                        <th>Quản Trị</th>
+                        <th>Quyền truy cập</th>
                         <th>Email</th>
                         <th style="text-align: center">Chức năng</th>
                     </tr>
@@ -43,7 +43,16 @@
                         <tr>
                             <td>@item.TenDN</td>
                             <td>@item.MatKhau</td>
-                            <td>@item.Quyen</td>
+                            <td>
+                                @if (item.Quyen == true)
+                                {
+                                    <span>Admin</span>
+                                }
+                                else
+                                {
+                                    <span>User</span>
+                                }
+                            </td>
                             <td>@item.Email</td>
                             <td style="width: 14%; text-align: center">
                                 <a href="@Url.Action("SuaTK", new { tendn = item.TenDN })" class="btn btn-primary btn-icon-split">
@@ -75,8 +84,8 @@
         else
             return false;
     }
-        FocusEvent = false;
-        checked = false;
+    FocusEvent = false;
+    checked = false;
 </script>
 
 
