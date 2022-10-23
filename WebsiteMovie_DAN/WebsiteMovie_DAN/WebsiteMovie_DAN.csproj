@@ -330,6 +330,7 @@
     <Content Include="Areas\Admin\Views\DSPhim\ThemPhimLe.cshtml" />
     <Content Include="Areas\Admin\Views\DSPhim\ChiTietPhimLe.cshtml" />
     <Content Include="Areas\Admin\Views\DSPhim\SuaPhimLe.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMuc\ThemTinTuc.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

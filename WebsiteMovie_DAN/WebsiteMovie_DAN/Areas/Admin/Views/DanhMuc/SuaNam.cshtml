@@ -1,7 +1,7 @@
 ﻿
 @model WebsiteMovie_DAN.Models.Nam
 @{
-    ViewBag.Title = "SuaNam";
+    ViewBag.Title = "Sửa năm phát hành - Quản trị - NamLoc Movie";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -42,5 +42,5 @@
     </fieldset>
 }
 <div>
-    @Html.ActionLink("Trở lại", "TheLoai", "DanhMuc")
+    <button type="button" class="btn btn-secondary">@Html.ActionLink("Trở lại", "TheLoai", "DanhMuc")</button>
 </div>

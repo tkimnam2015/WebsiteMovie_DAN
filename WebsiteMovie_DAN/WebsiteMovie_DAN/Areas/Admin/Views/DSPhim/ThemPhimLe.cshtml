@@ -20,11 +20,15 @@
 
         <p>
             Năm Phát Hành
-            @Html.DropDownList("NamPH", null, new { @class = "form-control" })
+            <div style="margin-top:3px;">
+                @Html.DropDownList("NamPH", null, new { @class = "form-control" })
+            </div>
         </p>
         <p>
             Thể Loại
-            @Html.DropDownList("IDTheLoai", null, new { @class = "form-control" })
+            <div style="margin-top:5px;">
+                @Html.DropDownList("IDTheLoai", null, new { @class = "form-control" })
+            </div>
         </p>
         <p>
             Thời Lượng
