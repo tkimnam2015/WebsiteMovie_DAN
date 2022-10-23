@@ -1,6 +1,6 @@
 ﻿@using WebsiteMovie_DAN.Models
 @{
-    ViewBag.Title = "CTTapPhimBo";
+    ViewBag.Title = "Chi tiết tập phim - Quản trị - NamLoc Movie";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 <div class="row">
@@ -8,7 +8,7 @@
     <div class="col-2">
         <div style="float:right">
             <button type="button" class="btn btn-success">
-                @Html.ActionLink("Thêm", "ThemTapPhim", new { id = ViewData["Id"] })
+                @Html.ActionLink("Thêm tập phim", "ThemTapPhim", new { id = ViewData["Id"] })
 
         </button>
 
@@ -75,9 +75,6 @@
         </div>
     </div>
 </div>
-<a href="@Url.Action("ThemTapPhim", new { id = ViewData["Id"]})" class="btn btn-primary btn-icon-split">
-    Thêm
-</a>
 <script>
     function ConfirmXoa() {
         if (confirm("Bạn có chắc muốn xóa tài khoản này không ?"))

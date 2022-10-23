@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "DSPhimLe";
+    ViewBag.Title = "Danh sách phim lẻ - Quản trị - NamLoc Movie";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -27,17 +27,30 @@
                 <div class="card-body" style="margin-left: -15px">
                     <p class="card-text" style="text-align: left; overflow: hidden; -webkit-line-clamp: 1; display: -webkit-box; -webkit-box-orient: vertical;"><b>Tên phim : </b>@item.TenPhim</p>
                     <p class="card-text" style="overflow: hidden; -webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical;"><b>Nội dung : </b>@item.NoiDung</p>
-                    <p class="card-text"><b>Năm Phát Hành : </b>@item.Nam.TenNam</p>
                     <p class="card-text"><b>Thể Loại : </b>@item.TheLoai.TenTheLoai</p>
                     <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm ">@Html.ActionLink("Sửa thông tin", "SuaPhimLe", new { id = item.ID })</button>
+                        <div style="margin-left:10px;">
+                            <button type="button" class="btn btn-success">@Html.ActionLink("Sửa thông tin", "SuaPhimLe", new { id = item.ID })</button>
                         </div>
-                        <small class="text-muted">@item.ThoiLuong</small>
+                        <a onclick="return ConfirmXoa()" href="@Url.Action("XoaPhimLe", new { id = item.ID })" class="btn btn-danger btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-trash"></i>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     }
+    <script>
+        function ConfirmXoa() {
+            if (confirm("Bạn có chắc muốn xóa phim này không?"))
+                return true;
+            else
+                return false;
+        }
+        FocusEvent = false;
+        checked = false;
+    </script>
 </div>
 

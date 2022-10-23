@@ -132,6 +132,8 @@ namespace WebsiteMovie_DAN.Controllers
             {
                 tk.TenDN = tendn;
                 tk.MatKhau = mk;
+                tk.Email = email;
+                tk.Quyen = false;
                 data.TaiKhoans.InsertOnSubmit(tk);
                 data.SubmitChanges();
                 return RedirectToAction("/DangNhap");

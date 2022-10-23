@@ -1,0 +1,54 @@
+﻿@model WebsiteMovie_DAN.Models.DSPhimLe
+@{
+    ViewBag.Title = "Thêm phim lẻ - Quản trị - NamLoc Movie";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("ThemPhimLe", "DSPhim", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Thêm Phim Lẻ</legend>
+
+        <p>Tên Phim</p>
+        @Html.TextBox("TenPhim", null, new { @class = "form-control" })
+        <p>
+            Nội dung
+            @Html.TextBox("NoiDung", null, new { @class = "form-control" })
+        </p>
+
+        <p>
+            Năm Phát Hành
+            @Html.DropDownList("NamPH", null, new { @class = "form-control" })
+        </p>
+        <p>
+            Thể Loại
+            @Html.DropDownList("IDTheLoai", null, new { @class = "form-control" })
+        </p>
+        <p>
+            Thời Lượng
+            @Html.TextBox("ThoiLuong", null, new { @class = "form-control" })
+        </p>
+        <p>
+            Hình
+            <input type="file" name="fileupload" />
+        </p>
+        <p>
+            Quốc Gia
+            @Html.DropDownList("IDQuocGia", null, new { @class = "form-control" })
+        </p>
+        <p>
+            Link Phim
+            @Html.TextBoxFor(model => model.Link, new { @class = "form-control" })
+        </p>
+        <p>
+            <input type="submit" value="Thêm" class="btn btn-success form-control" />
+        </p>
+    </fieldset>
+}
+<div>
+    <button type="button" class="btn btn-secondary">@Html.ActionLink("Trờ về", "DSPhimLe")</button>
+</div>
+
+

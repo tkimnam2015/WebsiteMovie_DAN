@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "DSPhimBo";
+    ViewBag.Title = "Danh sách phim bộ - Quản trị - NamLoc Movie";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 <div class="row">
@@ -26,16 +26,21 @@
                     <p class="card-text" style="text-align:left;overflow: hidden;-webkit-line-clamp:1;display: -webkit-box;-webkit-box-orient: vertical;"><b>Tên phim : </b>@item.TenPhim</p>
                     <p class="card-text" style="overflow: hidden;-webkit-line-clamp:3;display: -webkit-box;-webkit-box-orient: vertical;"><b>Nội dung : </b>@item.NoiDung</p>
                     <p class="card-text"><b>Thể Loại : </b>@item.TheLoai.TenTheLoai</p>
-                    <p class="text-muted"><b>Số Tập :</b>@item.ThoiLuong</p>
+                    <p class="text-muted"><b>Số Tập : </b>@item.ThoiLuong</p>
                     <p class="card-text"><b>Năm Phát Hành : </b>@item.Nam.TenNam</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
                             @*<a onclick="return ConfirmXoa()" href="@Url.Action("XoaPhim", new { id = item.ID })">Xóa</a>*@
-                            @Html.ActionLink("Thêm tập phim", "ThemTapPhim", new { id = item.ID })
-                        </div>
+                            <button type="button" class="btn btn-success">@Html.ActionLink("Thêm tập", "ThemTapPhim", new { id = item.ID })</button>
+</div>
                         <div>
-                            @Html.ActionLink("Sửa thông tin", "SuaPhim", new { id = item.ID })
-                        </div>
+                            <button type="button" class="btn btn-success">@Html.ActionLink("Sửa thông tin", "SuaPhim", new { id = item.ID })</button>
+</div>
+                        <a onclick="return ConfirmXoa()" href="@Url.Action("XoaPhim", new { id = item.ID })" class="btn btn-danger btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-trash"></i>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>

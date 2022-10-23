@@ -1,0 +1,39 @@
+﻿@model WebsiteMovie_DAN.Models.CTTapPhim
+@{
+    ViewBag.Title = "Thêm tập phim - Quản trị - NamLoc Movie";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("ThemTapPhim", "DSPhim"))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend></legend>
+        <div class="editor-label">
+            <p>Tên Phim : <b>@ViewData["TenPhim"]</b> </p>
+        </div>
+        <div class="editor-field">
+
+        </div>
+        <div class="editor-label">
+            <p>Thêm tập : <b>@ViewData["TapPhim"]</b></p>
+        </div>
+        <div class="editor-label">
+            <b>Link Tập Phim</b>
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Link, new { @class = "form-control" })
+            @ViewData["Loi1"]
+            @Html.ValidationMessageFor(model => model.Link)
+            @ViewData["Loi2"]
+        </div>
+        <p>
+            <input type="submit" value="Thêm" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+<div>
+    <button type="button" class="btn btn-secondary">@Html.ActionLink("Trở lại", "CTTapPhimBo")</button>
+</div>
