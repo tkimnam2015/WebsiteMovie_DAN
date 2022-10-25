@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebsiteMovie_DAN.Models;
@@ -50,20 +49,5 @@ namespace WebsiteMovie_DAN.Controllers
 
         }
 
-        //Xem tập sau
-        public ActionResult TapSau(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            DSPhimBo tapsau = data.DSPhimBos.SkipWhile(x => x.ID != id).Skip(1).FirstOrDefault();
-            if (tapsau == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tapsau);
-        }
     }
 }
