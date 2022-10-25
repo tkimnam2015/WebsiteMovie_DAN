@@ -189,6 +189,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\DanhMucController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DSPhimController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\TaiKhoanController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -253,6 +254,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\TaiKhoanDTO.cs" />
     <Compile Include="Models\Webmovie.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -318,6 +320,17 @@
     <Content Include="Areas\Admin\Views\DanhMuc\SuaTinTuc.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMuc\GioiThieuWebXemPhimSo1VietNam.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMuc\SuaGioiThieu.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\DSPhimLe.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\DSPhimBo.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\CTTapPhimBo.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\ThemPhimBo.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\SuaPhim.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\ThemTapPhim.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\SuaTap.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\ThemPhimLe.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\ChiTietPhimLe.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\SuaPhimLe.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMuc\ThemTinTuc.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

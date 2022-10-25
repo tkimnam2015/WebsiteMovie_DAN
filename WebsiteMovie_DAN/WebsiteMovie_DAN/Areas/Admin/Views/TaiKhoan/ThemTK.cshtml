@@ -1,5 +1,5 @@
 ﻿
-@model WebsiteMovie_DAN.Models.TaiKhoan
+@model WebsiteMovie_DAN.Models.TaiKhoanDTO
 
 @{
     ViewBag.Title = "ThemTK";
@@ -28,26 +28,57 @@
         </div>
         <div class="editor-field">
             @Html.PasswordFor(model => model.MatKhau, new { @class = "form-control" })
-            @ViewData["Loi1"]
+            <div class="text-danger">
+                @ViewData["Loi1"]
+            </div>
             @Html.ValidationMessageFor(model => model.MatKhau)
-            @ViewData["Loi2"]
+            <div class="text-danger">
+                @ViewData["Loi2"]
+            </div>
         </div>
         <div class="editor-label">
             <b>Email</b>
         </div>
         <div class="editor-field">
             @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
-            @ViewData["Loi123"]
+            <div class="text-danger">
+                @ViewData["Loi123"]
+            </div>
             @Html.ValidationMessageFor(model => model.Email)
+            <div class="text-danger">
+                @ViewData["Loi3"]
+            </div>
         </div>
-        <p>
-            <input type="submit" value="Thêm" class="btn btn-success" />
+        <div class="editor-label">
+            <b>Quyền truy cập</b>
+        </div>
+        <div class="editor-field" style="margin-top:10px;">
+            @{
+                List<SelectListItem> listItems = new List<SelectListItem>();
+                listItems.Add(new SelectListItem
+                {
+                    Text = "Admin",
+                    Value = "True"
+                });
+                listItems.Add(new SelectListItem
+                {
+                    Text = "User",
+                    Value = "False",
+                    Selected = true
+                });
+            }
 
-        </p>
+            @Html.DropDownListFor(model => model.Quyen, listItems, new { @class = "form-control", })
+
+        </div>
+
+        <div class="editor-field" style="margin-top:20px;">
+            <input type="submit" value="Thêm" class="btn btn-success form-control" />
+        </div>
     </fieldset>
 }
-<div>
-    @Html.ActionLink("Trở lại", "DSTaiKhoan", "TaiKhoan")
+<div style="margin-top:20px;">
+    <button type="button" class="btn btn-secondary">@Html.ActionLink("Trở lại", "DSTaiKhoan", "TaiKhoan")</button>
 </div>
 
 

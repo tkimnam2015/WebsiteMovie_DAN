@@ -1,0 +1,41 @@
+﻿@model WebsiteMovie_DAN.Models.tintucphim
+@{
+    ViewBag.Title = "Thêm tin tức - Quản trị - NamLoc Movie";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("ThemTinTuc", "DanhMuc", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Thêm Tin Tức</legend>
+
+        <p>Tiêu đề</p>
+        @Html.TextBox("tieude", null, new { @class = "form-control" })
+        @ViewData["Loi3"]
+        @ViewData["Loi4"]
+        <p>
+            Tóm tắt
+            @Html.TextBox("tomtat", null, new { @class = "form-control" })
+            @ViewData["Loi1"]
+        </p>
+        <p>
+            Nội dung
+            @Html.TextBox("noidung", null, new { @class = "form-control" })
+            @ViewData["Loi2"]
+        </p>
+        <p>
+            Hình
+            <input type="file" name="fileUploadTT" />
+        </p>
+
+
+        <input type="submit" value="Thêm" class="btn btn-success form-control" />
+
+    </fieldset>
+}
+<div style="margin-top:20px;">
+    <button type="button" class="btn btn-secondary">@Html.ActionLink("Trờ về", "TinTuc")</button>
+</div>

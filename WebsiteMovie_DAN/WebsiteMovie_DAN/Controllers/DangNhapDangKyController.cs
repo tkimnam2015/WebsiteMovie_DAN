@@ -105,6 +105,7 @@ namespace WebsiteMovie_DAN.Controllers
             var tendn = coll["TenDN"];
             var mk = coll["MatKhau"];
             var mknhaplai = coll["MatKhauNhapLai"];
+            var email = coll["Email"];
             //var taikhoan = from t in data.TaiKhoans where t.TenDN.Equals(tendn) select t.TenDN;
             var taikhoan = data.TaiKhoans.ToList();
             int kt = 0;
@@ -125,10 +126,14 @@ namespace WebsiteMovie_DAN.Controllers
             {
                 ViewData["Loi12"] = "mật khẩu nhập lại không đúng";
             }
+            else if (String.IsNullOrEmpty(email))
+                ViewData["Loi123"] = "Chưa điền thông tin email";
             else
             {
                 tk.TenDN = tendn;
                 tk.MatKhau = mk;
+                tk.Email = email;
+                tk.Quyen = false;
                 data.TaiKhoans.InsertOnSubmit(tk);
                 data.SubmitChanges();
                 return RedirectToAction("/DangNhap");

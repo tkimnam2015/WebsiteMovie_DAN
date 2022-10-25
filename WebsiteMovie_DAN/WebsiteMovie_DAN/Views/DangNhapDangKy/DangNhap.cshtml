@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "DangNhap";
+    ViewBag.Title = "Đăng nhập - NamLoc Movie";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @ViewBag.ThongBao
@@ -20,16 +20,23 @@
                                     @* <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>*@
                                     <h2>Tên đăng nhập</h2>
                                     @Html.TextBox("TenDN", null, new { @class = "form-control" })
-                                    @ViewData["Loi"]
-                                    @ViewData["Loi12"]
-
+                                    <div class="text-danger">
+                                        @ViewData["Loi"]
+                                    </div>
+                                    <div class="text-danger">
+                                        @ViewData["Loi12"]
+                                    </div>
                                 </div>
                                 <div class="form-label-group">
                                     @*<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>*@
                                     <h2>Mật khẩu</h2>
                                     @Html.Password("MatKhau", null, new { @class = "form-control" })
-                                    @ViewData["Loi1"]
-                                    @ViewData["Loi2"]
+                                    <div class="text-danger">
+                                        @ViewData["Loi1"]
+                                    </div>
+                                    <div class="text-danger">
+                                        @ViewData["Loi2"]
+                                    </div>
                                 </div>
                                 <div class="custom-control mb-3">
                                     <input type="checkbox" id="customCheck1">
