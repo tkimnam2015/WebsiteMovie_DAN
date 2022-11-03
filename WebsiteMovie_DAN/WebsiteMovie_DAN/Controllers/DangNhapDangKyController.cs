@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using WebsiteMovie_DAN.Models;
 using Facebook;
 using System.Configuration;
+using WebsiteMovie_DAN.Common;
+using System.Security.Policy;
 
 namespace WebsiteMovie_DAN.Controllers
 {
@@ -54,8 +56,8 @@ namespace WebsiteMovie_DAN.Controllers
             }
             else
             {
-                TaiKhoan tk = data.TaiKhoans.SingleOrDefault(n => n.TenDN.Equals(tendn) && n.MatKhau.Equals(mk));
-                if (tk != null)
+                TaiKhoan tk = data.TaiKhoans.SingleOrDefault(n => n.TenDN.Equals(tendn) && n.MatKhau.Equals(SHA_Hash.SHA1(mk)));
+                if (tk != null && tk.MatKhau == SHA_Hash.SHA1(mk))
                 {
                     if (tk.Quyen == true)//Admin
                     {
@@ -131,7 +133,8 @@ namespace WebsiteMovie_DAN.Controllers
             else
             {
                 tk.TenDN = tendn;
-                tk.MatKhau = mk;
+                SHA_Hash Hash = new SHA_Hash();
+                tk.MatKhau = SHA_Hash.SHA1(mk);
                 tk.Email = email;
                 tk.Quyen = false;
                 data.TaiKhoans.InsertOnSubmit(tk);
