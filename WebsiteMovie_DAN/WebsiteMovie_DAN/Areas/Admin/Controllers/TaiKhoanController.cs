@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebsiteMovie_DAN.Models;
+using WebsiteMovie_DAN.Common;
 
 namespace WebsiteMovie_DAN.Areas.Admin.Controllers
 {
@@ -20,8 +21,7 @@ namespace WebsiteMovie_DAN.Areas.Admin.Controllers
         //Xóa TK
         public ActionResult XoaTK(string tendn)
         {
-            TaiKhoan tk = data.TaiKhoans.SingleOrDefault(n => n.TenDN
-            == tendn);
+            TaiKhoan tk = data.TaiKhoans.SingleOrDefault(n => n.TenDN == tendn);
             if (tk == null)
             {
                 Response.SubStatusCode = 404;
@@ -36,13 +36,17 @@ namespace WebsiteMovie_DAN.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult ThemTK()
         {
-            return View();
+            TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO();
+            return View(taiKhoanDTO);
         }
         [HttpPost]
-        public ActionResult ThemTK(TaiKhoan tk, FormCollection coll)
+        public ActionResult ThemTK(TaiKhoanDTO tk)
         {
-            var tendn = coll["TenDN"];
-            var mk = coll["MatKhau"];
+            string tendn = tk.TenDN;
+            string mk = tk.MatKhau;
+            string em = tk.Email;
+           
+            
             //var taikhoan = from t in data.TaiKhoans where t.TenDN.Equals(tendn) select t.TenDN;
             var taikhoan = data.TaiKhoans.ToList();
             int kt = 0;
@@ -52,21 +56,37 @@ namespace WebsiteMovie_DAN.Areas.Admin.Controllers
                     kt = 1;
             }
             if (String.IsNullOrEmpty(tendn))
-                ViewData["Loi"] = "Tên đăng nhập không được để chống";
+                ViewData["Loi"] = "Tên đăng nhập không được để trống !";
             else if (String.IsNullOrEmpty(mk))
-                ViewData["Loi1"] = "Mật khẩu không được để chống";
+                ViewData["Loi1"] = "Mật khẩu không được để trống !";
+            else if (String.IsNullOrEmpty(em))
+                ViewData["Loi3"] = "Email không được để trống !";
             else if (kt == 1)
             {
                 ViewData["Loi2"] = "Đã có tài khoản này";
             }
             else
             {
-                tk.TenDN = tendn;
-                tk.MatKhau = mk;
-                data.TaiKhoans.InsertOnSubmit(tk);
+                //tk.TenDN = tendn;
+                //tk.MatKhau = mk;
+                TaiKhoan taiKhoan = new TaiKhoan();
+                taiKhoan.TenDN = tendn;
+                taiKhoan.MatKhau = SHA_Hash.SHA1(mk);
+                taiKhoan.Email = tk.Email;
+                if (tk.Quyen == null ||tk.Quyen=="False")
+                {
+                    taiKhoan.Quyen = false;
+                }
+                else
+                {
+                    taiKhoan.Quyen = true;
+                }
+
+                data.TaiKhoans.InsertOnSubmit(taiKhoan);
                 data.SubmitChanges();
                 return RedirectToAction("DSTaiKhoan");
             }
+
             return View();
         }
 
@@ -86,15 +106,14 @@ namespace WebsiteMovie_DAN.Areas.Admin.Controllers
         public ActionResult SuaTK(string tendn, FormCollection collection)
         {
             var tk = data.TaiKhoans.First(n => n.TenDN == tendn);
-            var matkhau = collection["MatKhau"];
-            var img = collection["Img"];
-            if (String.IsNullOrEmpty(matkhau))
+            var mk = collection["MatKhau"];
+            if (String.IsNullOrEmpty(mk))
             {
                 ViewData["Loi"] = "Không được để trống";
             }
             else
             {
-                tk.MatKhau = matkhau;
+                tk.MatKhau = SHA_Hash.SHA1(mk);
                 UpdateModel(tk);
                 data.SubmitChanges();
                 return RedirectToAction("DSTaiKhoan");

@@ -8,7 +8,7 @@ namespace WebsiteMovie_DAN
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
+      
         }
     }
 }

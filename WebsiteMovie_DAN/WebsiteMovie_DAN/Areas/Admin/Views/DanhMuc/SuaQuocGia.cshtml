@@ -1,6 +1,6 @@
 ﻿@model WebsiteMovie_DAN.Models.QuocGia
 @{
-    ViewBag.Title = "SuaQuocGia";
+    ViewBag.Title = "Sửa quốc gia - Quản trị - NamLoc Movie";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -41,5 +41,5 @@
     </fieldset>
 }
 <div>
-    @Html.ActionLink("Trở lại", "QuocGia", "DanhMuc")
+    <button type="button" class="btn btn-secondary">@Html.ActionLink("Trở lại", "QuocGia", "DanhMuc")</button>
 </div>

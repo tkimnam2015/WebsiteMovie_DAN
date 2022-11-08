@@ -182,22 +182,20 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\DanhMucController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DSPhimController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\TaiKhoanController.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Common\Hash.cs" />
     <Compile Include="Controllers\ChiTietPhimController.cs" />
     <Compile Include="Controllers\DangNhapDangKyController.cs" />
     <Compile Include="Controllers\GioiThieuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LichSuXemController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TimKiemController.cs" />
     <Compile Include="Controllers\TinTucPhimController.cs" />
     <Compile Include="Controllers\XemPhimController.cs" />
@@ -250,9 +248,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\TaiKhoanDTO.cs" />
     <Compile Include="Models\Webmovie.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -318,6 +315,17 @@
     <Content Include="Areas\Admin\Views\DanhMuc\SuaTinTuc.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMuc\GioiThieuWebXemPhimSo1VietNam.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMuc\SuaGioiThieu.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\DSPhimLe.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\DSPhimBo.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\CTTapPhimBo.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\ThemPhimBo.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\SuaPhim.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\ThemTapPhim.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\SuaTap.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\ThemPhimLe.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\ChiTietPhimLe.cshtml" />
+    <Content Include="Areas\Admin\Views\DSPhim\SuaPhimLe.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMuc\ThemTinTuc.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -338,7 +346,6 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -353,14 +360,6 @@
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\SendCode.cshtml" />
     <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\TimKiem.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\TimKiem\TimKiemTheLoai.cshtml" />
