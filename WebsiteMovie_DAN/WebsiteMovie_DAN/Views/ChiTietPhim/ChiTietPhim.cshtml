@@ -2,7 +2,7 @@
 @using WebsiteMovie_DAN.Models;
 
 @{
-    ViewBag.Title = "Chi tiết phim - NamLoc Movie";
+    ViewBag.Title = @Model.TenPhim + " - NamLoc Movie";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <fieldset>
@@ -49,7 +49,7 @@
                                     </tr>
                                     <tr>
                                         <td style="color: #000; font-weight: bold;">Lượt xem</td>
-                                        <td data-v-7c633b6c=""><a>@Model.LuotXem</a></td>
+                                        <td data-v-7c633b6c=""><a>@Model.LuotXem <i class="far fa-eye"></i></a></td>
                                     </tr>
                                 </table>
                             </div>
@@ -58,14 +58,24 @@
                             <div style="padding-top: 25px;">
                                 @if (Session["TK"] == null)
                                 {
-                                    <a class="rotate-button" href="@Url.Action("LuotXem", "Home", new { id = @Model.ID})">
+                                    <a class="rotate-button" style="margin-top:15px;" href="@Url.Action("LuotXem", "Home", new { id = @Model.ID})">
                                         <span class="rotate-button-face">Xem Phim</span>
                                         <span class="rotate-button-face-back">Xem Phim</span>
                                     </a>
                                 }
                                 else
                                 {
-                                    <a class="rotate-button" href="@Url.Action("ThemVaoLichSu", "LichSuXem", new { tendn = Session["TK"], idphim = @Model.ID, id = @Model.ID})">
+                                    <div>
+                                        <button type="button" class="btn btn-danger" style="border-radius:5px 6px;">
+                                            <i class="fas fa-grin-hearts"></i>
+                                            Yêu thích
+                                        </button>
+                                        <button type="button" class="btn btn-secondary" style="border-radius:5px 6px;">
+                                            <i class="fas fa-cart-arrow-down"></i>
+                                            Đặt mua
+                                        </button>
+                                    </div>
+                                    <a class="rotate-button" style="margin-top:15px;" href="@Url.Action("ThemVaoLichSu", "LichSuXem", new { tendn = Session["TK"], idphim = @Model.ID, id = @Model.ID})">
                                         <span class="rotate-button-face">Xem Phim</span>
                                         <span class="rotate-button-face-back">Xem Phim</span>
                                     </a>
@@ -77,7 +87,6 @@
                                     <a class="rotate-button" data-toggle="modal" data-target="#exampleModalCenter" href="#">
                                         <span class="rotate-button-face">Xem sau</span>
                                         <span class="rotate-button-face-back">Xem sau</span>
-
                                     </a>
 
                                     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -89,11 +98,11 @@
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <div class="modal-body">
-                                                    Bạn phải đăng nhập để sử dụng chức năng này ^^
+                                                <div class="modal-body" style="color:red;">
+                                                    Bạn phải đăng nhập để sử dụng chức năng này !
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
 
                                                 </div>
                                             </div>
@@ -114,7 +123,7 @@
                         </div>
                     </div>
                     <div class="film-desc" style="padding-top: 15px; margin: 20px">
-                        <span>Nội dung</span>
+                        <span class="label label-primary">Nội dung</span>
                         <div id="summary">
                             <p class="collapse" id="collapseSummary" style="color: #000000">
                                 @Model.NoiDung
@@ -186,7 +195,10 @@
                                     <span class="list-top-item-ep"></span>
                                     <br>
 
-                                    <span class="list-top-item-view">@item.LuotXem Lượt Xem</span>
+                                    <span class="list-top-item-ep"> @item.ThoiLuong </span>
+                                    <br>
+
+                                    <span class="list-top-item-view">@item.LuotXem Lượt Xem <i class="far fa-eye"></i></span>
                                 </div>
                             </div>
 
