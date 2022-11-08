@@ -2,7 +2,7 @@
 @using WebsiteMovie_DAN.Models;
 
 @{
-    ViewBag.Title = "Chi Tiết Phim lẻ - NamLoc Movie";
+    ViewBag.Title = @Model.TenPhim + " - NamLoc Movie";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <fieldset>
@@ -49,6 +49,14 @@
                                 </table>
                             </div>
 
+                            <br />
+
+                            <div>
+                                <button type="button" class="btn btn-danger" style="border-radius:5px 6px;">
+                                    <i class="fas fa-grin-hearts"></i>
+                                    Yêu thích
+                                </button>
+                            </div>
 
                             <div style="padding-top: 25px;">
                                 <a class="rotate-button" href="@Url.Action("LuotXemPhimLe", "Home", new { id = @Model.ID })">
@@ -140,7 +148,7 @@
                                     <span class="list-top-item-ep"> @item.ThoiLuong </span>
                                     <br>
 
-                                    <span class="list-top-item-view">@item.LuotXem Lượt Xem</span>
+                                    <span class="list-top-item-view">@item.LuotXem Lượt Xem <i class="far fa-eye"></i></span>
                                 </div>
                             </div>
 

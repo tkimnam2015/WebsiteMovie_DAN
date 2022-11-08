@@ -97,11 +97,14 @@
                 <div class="container">
                     <div class="row" style="padding-top: 10px">
                         <div class="col-12 ">
+                            <div>
+                                <h2 style="color: white; background-color: rgb(51,122,183); font-size: 20px; text-align: center;">Phim Bộ</h2>
+                            </div>
                             <nav>
                                 <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Phim Cập Nhật</a>
-                                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Hot Ngày</a>
-                                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Hot tuần</a>
+                                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Mới Cập Nhật</a>
+                                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Trending Ngày</a>
+                                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Trending Tuần</a>
 
                                 </div>
                             </nav>
@@ -136,9 +139,15 @@
                                                             <span class="label label-primary">
                                                                 @item.ThoiLuong
                                                             </span>
+                                                            <span class="label label-primary" style="margin-left:5px;">
+                                                                @item.LuotXem <i class="far fa-eye"></i>
+                                                            </span>
+                                                            <span class="label label-primary" style="margin-left:5px;">
+                                                                @item.LuotXem <i class="far fa-heart"></i>
+                                                            </span>
                                                         </div>
 
-                                                        <div class="movie-title">
+                                                        <div class="movie-title" style="border-radius: 2px 3px; background-color: rgb(51,122,183);">
                                                             <h3>
                                                                 <a href="~/ChiTietPhim/ChiTietPhim">@item.TenPhim</a>
                                                             </h3>
@@ -177,7 +186,7 @@
 
 
                 <div>
-                    <h2 style="color: #43a6df; font-size: 20px; text-align: center; padding-top: 10px">Phim Lẻ</h2>
+                    <h2 style="color: white; background-color: rgb(51,122,183); font-size: 20px; text-align: center;">Phim Lẻ</h2>
                 </div>
 
                 <div class="row" style="padding: 10px">
@@ -208,8 +217,11 @@
                                         <span class="label label-primary">
                                             @item.ThoiLuong
                                         </span>
+                                        <span class="label label-primary" style="margin-left:10px;">
+                                            @item.LuotXem <i class="far fa-eye"></i>
+                                        </span>
                                     </div>
-                                    <div class="movie-title">
+                                    <div class="movie-title" style="border-radius: 2px 3px; background-color: rgb(51,122,183);">
                                         <h3>
                                             <a href="~/ChiTietPhim/ChiTietPhimLe">@item.TenPhim</a>
                                         </h3>

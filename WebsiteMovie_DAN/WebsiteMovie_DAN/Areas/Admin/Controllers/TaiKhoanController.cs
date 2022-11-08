@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebsiteMovie_DAN.Models;
+using WebsiteMovie_DAN.Common;
 
 namespace WebsiteMovie_DAN.Areas.Admin.Controllers
 {
@@ -20,8 +21,7 @@ namespace WebsiteMovie_DAN.Areas.Admin.Controllers
         //Xóa TK
         public ActionResult XoaTK(string tendn)
         {
-            TaiKhoan tk = data.TaiKhoans.SingleOrDefault(n => n.TenDN
-            == tendn);
+            TaiKhoan tk = data.TaiKhoans.SingleOrDefault(n => n.TenDN == tendn);
             if (tk == null)
             {
                 Response.SubStatusCode = 404;
@@ -70,9 +70,8 @@ namespace WebsiteMovie_DAN.Areas.Admin.Controllers
                 //tk.TenDN = tendn;
                 //tk.MatKhau = mk;
                 TaiKhoan taiKhoan = new TaiKhoan();
-
                 taiKhoan.TenDN = tendn;
-                taiKhoan.MatKhau = mk;
+                taiKhoan.MatKhau = SHA_Hash.SHA1(mk);
                 taiKhoan.Email = tk.Email;
                 if (tk.Quyen == null ||tk.Quyen=="False")
                 {
@@ -107,15 +106,14 @@ namespace WebsiteMovie_DAN.Areas.Admin.Controllers
         public ActionResult SuaTK(string tendn, FormCollection collection)
         {
             var tk = data.TaiKhoans.First(n => n.TenDN == tendn);
-            var matkhau = collection["MatKhau"];
-            var img = collection["Img"];
-            if (String.IsNullOrEmpty(matkhau))
+            var mk = collection["MatKhau"];
+            if (String.IsNullOrEmpty(mk))
             {
                 ViewData["Loi"] = "Không được để trống";
             }
             else
             {
-                tk.MatKhau = matkhau;
+                tk.MatKhau = SHA_Hash.SHA1(mk);
                 UpdateModel(tk);
                 data.SubmitChanges();
                 return RedirectToAction("DSTaiKhoan");

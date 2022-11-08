@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -506,7 +507,7 @@ namespace WebsiteMovie_DAN.Areas.Admin.Controllers
             tin.sdtlien = sdt;
             UpdateModel(tin);
             data.SubmitChanges();
-            return RedirectToAction("GioiThieuWebXemPhimSo1VietNam");
+            return View(tin);
         }
 
     }
