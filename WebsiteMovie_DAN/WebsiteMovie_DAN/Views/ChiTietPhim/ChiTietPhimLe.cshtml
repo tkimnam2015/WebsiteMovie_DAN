@@ -49,17 +49,6 @@
                                 </table>
                             </div>
 
-                            <br />
-
-                            <div>
-                                <button type="button" class="btn btn-danger" style="border-radius:5px 6px;">
-                                    <a href="@Url.Action("ThemYeuThichPhimLe", "LuotThich", new { tendn = Session["TK"], idphim = @Model.ID, id = @Model.ID})">
-                                        <i class="fas fa-grin-hearts"></i>
-                                        Yêu thích
-                                    </a>
-                                </button>
-                            </div>
-
                             <div style="padding-top: 25px;">
                                 <a class="rotate-button" href="@Url.Action("LuotXemPhimLe", "Home", new { id = @Model.ID })">
                                     <span class="rotate-button-face">Xem Phim</span>
