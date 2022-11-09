@@ -113,9 +113,13 @@
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                     <div class="dropdown-divider"></div>
 
-                                    <a class="dropdown-item" href="@Url.Action("Index", "XemSau", new { tendn = @Session["TK"] })">
+                                    <a class="dropdown-item" href="#">
                                         <i class="fas fa-cart-arrow-down mr-2 text-gray-400"></i>
                                         Giỏ phim
+                                    </a>
+                                    <a class="dropdown-item" href="@Url.Action("YeuThichPhimBo", "LuotThich", new { tendn = @Session["TK"] })">
+                                        <i class="fas fa-heart mr-2 text-gray-400"></i>
+                                        Yêu Thích
                                     </a>
                                     <a class="dropdown-item" href="@Url.Action("Index", "XemSau", new { tendn = @Session["TK"] })">
                                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>

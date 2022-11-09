@@ -1,11 +1,11 @@
 ﻿@using WebsiteMovie_DAN.Models;
-@model List<HopPhim>
+@model List<LuotThichPhimBo>
 @{
-    ViewBag.Title = "Xem sau - NamLoc Movie";
+    ViewBag.Title = "Yêu thích phim - NamLoc Movie";
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
-<h3 style="color: #43a6df; font-size: 19px; margin-top: 10px; margin-left: 10px; border-bottom: 2px solid #43a6df">Danh Sách Xem Sau</h3>
+<h3 style="color: #43a6df; font-size: 19px; margin-top: 10px; margin-left: 10px; border-bottom: 2px solid #43a6df">Danh Sách Lượt Yêu Thích Phim Bộ</h3>
 <div class="card-body">
     <div class="row" style="padding: 10px">
         <table class="table table-bordered" width="100%" cellspacing="0">
@@ -33,7 +33,7 @@
                                 </a>
                             </button>
                             <button type="button" class="btn btn-danger">
-                                <a onclick="return ConfirmXoa()" href="@Url.Action("XoaXemSau", new { tendn = item.TenDN,idphim=item.IDPhim })">
+                                <a onclick="return ConfirmXoa()" href="@Url.Action("XoaYeuThichPhimBo", new { tendn = item.TenDN,idphim=item.IDPhim })">
                                     Xóa
                                 </a>
 
@@ -47,16 +47,3 @@
         </table>
     </div>
 </div>
-
-
-<script>
-    function ConfirmXoa() {
-        if (confirm("Bạn có chắc muốn xóa Phim này không ?"))
-            return true;
-        else
-            return false;
-    }
-    FocusEvent = false;
-    checked = false;
-</script>
-
