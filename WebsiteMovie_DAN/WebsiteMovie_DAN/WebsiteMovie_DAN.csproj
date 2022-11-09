@@ -196,6 +196,7 @@
     <Compile Include="Controllers\GioiThieuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LichSuXemController.cs" />
+    <Compile Include="Controllers\LuotThichController.cs" />
     <Compile Include="Controllers\TimKiemController.cs" />
     <Compile Include="Controllers\TinTucPhimController.cs" />
     <Compile Include="Controllers\XemPhimController.cs" />
@@ -288,11 +289,6 @@
     <Content Include="Entity\DataEntity.edmx.diagram">
       <DependentUpon>DataEntity.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\Webmovie.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>Webmovie.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\HomeAdmin\Home.cshtml" />
@@ -326,6 +322,11 @@
     <Content Include="Areas\Admin\Views\DSPhim\ChiTietPhimLe.cshtml" />
     <Content Include="Areas\Admin\Views\DSPhim\SuaPhimLe.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMuc\ThemTinTuc.cshtml" />
+    <Content Include="Models\Webmovie.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Webmovie.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -348,18 +349,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Home\TimKiem.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\TimKiem\TimKiemTheLoai.cshtml" />
@@ -376,6 +365,7 @@
     <Content Include="Views\ChiTietPhim\ChiTietPhim.cshtml" />
     <Content Include="Views\ChiTietPhim\ChiTietPhimLe.cshtml" />
     <Content Include="Views\LichSuXem\Index.cshtml" />
+    <Content Include="Views\LuotThich\YeuThichPhimBo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

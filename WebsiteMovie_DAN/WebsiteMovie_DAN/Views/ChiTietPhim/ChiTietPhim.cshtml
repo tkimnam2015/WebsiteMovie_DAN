@@ -32,7 +32,7 @@
                             <div class="chitiet" style="padding-top: 20px;width:100%;margin:auto">
                                 <table>
                                     <tr>
-                                        <td width="100px" style="color: #000; font-weight: bold;">Thời Lượng</td>
+                                        <td width="100px" style="color: #000; font-weight: bold;">Thời lượng</td>
                                         <td>@Model.ThoiLuong</td>
                                     </tr>
                                     <tr>
@@ -51,6 +51,10 @@
                                         <td style="color: #000; font-weight: bold;">Lượt xem</td>
                                         <td data-v-7c633b6c=""><a>@Model.LuotXem <i class="far fa-eye"></i></a></td>
                                     </tr>
+                                    <tr>
+                                        <td style="color: #000; font-weight: bold;">Giá phim</td>
+                                        <td data-v-7c633b6c=""><a>@Model.Gia VND </a></td>
+                                    </tr>
                                 </table>
                             </div>
 
@@ -67,8 +71,10 @@
                                 {
                                     <div>
                                         <button type="button" class="btn btn-danger" style="border-radius:5px 6px;">
-                                            <i class="fas fa-grin-hearts"></i>
-                                            Yêu thích
+                                            <a href="@Url.Action("ThemYeuThichPhimBo", "LuotThich", new { tendn = Session["TK"], idphim = @Model.ID, id = @Model.ID})">
+                                                <i class="fas fa-grin-hearts"></i>
+                                                Yêu thích
+                                            </a>
                                         </button>
                                         <button type="button" class="btn btn-secondary" style="border-radius:5px 6px;">
                                             <i class="fas fa-cart-arrow-down"></i>

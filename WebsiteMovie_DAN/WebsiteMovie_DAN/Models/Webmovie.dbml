@@ -39,10 +39,13 @@
       <Column Name="Img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="MaQG" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="LuotXem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LuotThich" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="DSPhimBo_Banner" Member="Banners" ThisKey="ID" OtherKey="IDPhim" Type="Banner" />
       <Association Name="DSPhimBo_CTTapPhim" Member="CTTapPhims" ThisKey="ID" OtherKey="ID" Type="CTTapPhim" />
       <Association Name="DSPhimBo_HopPhim" Member="HopPhims" ThisKey="ID" OtherKey="IDPhim" Type="HopPhim" />
       <Association Name="DSPhimBo_LichSu" Member="LichSus" ThisKey="ID" OtherKey="IDPhim" Type="LichSu" />
+      <Association Name="DSPhimBo_LuotThichPhimBo" Member="LuotThichPhimBos" ThisKey="ID" OtherKey="IDPhim" Type="LuotThichPhimBo" />
       <Association Name="Nam_DSPhimBo" Member="Nam" ThisKey="NamPhatHanh" OtherKey="MaNam" Type="Nam" IsForeignKey="true" />
       <Association Name="QuocGia_DSPhimBo" Member="QuocGia" ThisKey="MaQG" OtherKey="MaQG" Type="QuocGia" IsForeignKey="true" />
       <Association Name="TheLoai_DSPhimBo" Member="TheLoai" ThisKey="IDTheLoai" OtherKey="IDTheLoai" Type="TheLoai" IsForeignKey="true" />
@@ -60,6 +63,7 @@
       <Column Name="MaQG" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="LuotXem" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Link" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LuotThich" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Nam_DSPhimLe" Member="Nam" ThisKey="NamPhatHanh" OtherKey="MaNam" Type="Nam" IsForeignKey="true" />
       <Association Name="QuocGia_DSPhimLe" Member="QuocGia" ThisKey="MaQG" OtherKey="MaQG" Type="QuocGia" IsForeignKey="true" />
       <Association Name="TheLoai_DSPhimLe" Member="TheLoai" ThisKey="IDTheLoai" OtherKey="IDTheLoai" Type="TheLoai" IsForeignKey="true" />
@@ -88,6 +92,14 @@
       <Association Name="TaiKhoan_LichSu" Member="TaiKhoan" ThisKey="TenDN" OtherKey="TenDN" Type="TaiKhoan" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.LuotThichPhimBo" Member="LuotThichPhimBos">
+    <Type Name="LuotThichPhimBo">
+      <Column Name="TenDN" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDPhim" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="DSPhimBo_LuotThichPhimBo" Member="DSPhimBo" ThisKey="IDPhim" OtherKey="ID" Type="DSPhimBo" IsForeignKey="true" />
+      <Association Name="TaiKhoan_LuotThichPhimBo" Member="TaiKhoan" ThisKey="TenDN" OtherKey="TenDN" Type="TaiKhoan" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Nam" Member="Nams">
     <Type Name="Nam">
       <Column Name="MaNam" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -109,9 +121,10 @@
       <Column Name="TenDN" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MatKhau" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Quyen" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="TaiKhoan_HopPhim" Member="HopPhims" ThisKey="TenDN" OtherKey="TenDN" Type="HopPhim" />
       <Association Name="TaiKhoan_LichSu" Member="LichSus" ThisKey="TenDN" OtherKey="TenDN" Type="LichSu" />
+      <Association Name="TaiKhoan_LuotThichPhimBo" Member="LuotThichPhimBos" ThisKey="TenDN" OtherKey="TenDN" Type="LuotThichPhimBo" />
     </Type>
   </Table>
   <Table Name="dbo.TheLoai" Member="TheLoais">
