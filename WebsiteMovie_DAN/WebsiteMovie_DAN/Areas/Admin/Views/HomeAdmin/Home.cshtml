@@ -74,7 +74,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Lượt thích</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewData["LuotYeuThichPhimBo"]</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-heart fa-2x text-gray-300"></i>
@@ -96,7 +96,7 @@
         <!-- Custom Text Color Utilities -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary" style="text-align:center">Phim Mới Cập Nhật</h6>
+                <h6 class="m-0 font-weight-bold text-primary" style="text-align:center">Top 5 Phim Mới Cập Nhật</h6>
             </div>
             <div class="card-body">
                 @foreach (var item in ViewData["PhimBoMoi"] as List<DSPhimBo>)
@@ -119,7 +119,7 @@
         <!-- Background Gradient Utilities -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary" style="text-align:center">Phim Lẻ Xem Nhiều Nhất</h6>
+                <h6 class="m-0 font-weight-bold text-primary" style="text-align:center">Top 5 Phim Lẻ Xem Nhiều Nhất</h6>
             </div>
             <div class="card-body">
                 @foreach (var item in ViewData["TopPhimLe"] as List<DSPhimLe>)
@@ -141,7 +141,7 @@
         <!-- Grayscale Utilities -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary" style="text-align:center">Phim bộ Xem nhiều nhất</h6>
+                <h6 class="m-0 font-weight-bold text-primary" style="text-align:center">Top 5 Phim Bộ Xem Nhiều Nhất</h6>
             </div>
             <div class="card-body">
                 @foreach (var item in ViewData["TopPhim"] as List<DSPhimBo>)
@@ -149,6 +149,28 @@
                     <div class="p-3  border-bottom-dark " style="background-color:#394380 ">
                         <b> @item.TenPhim </b>
                         <b style="float:right"> @item.LuotXem Lượt</b>
+                    </div>
+
+                }
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Third Column -->
+    <div class="col-lg-4">
+
+        <!-- Grayscale Utilities -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary" style="text-align:center">Top 5 Phim bộ Yêu Thích Nhiều Nhất</h6>
+            </div>
+            <div class="card-body">
+                @foreach (var item in ViewData["TopLuotThichPhimBo"] as List<DSPhimBo>)
+                {
+                    <div class="p-3  border-bottom-dark " style="background-color:#394380 ">
+                        <b> @item.TenPhim </b>
+                        <b style="float:right"> @item.LuotThich Lượt</b>
                     </div>
 
                 }
