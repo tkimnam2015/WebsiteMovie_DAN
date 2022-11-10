@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Danh sách phim bộ - Quản trị - NamLoc Movie";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
@@ -28,14 +29,15 @@
                     <p class="card-text"><b>Thể Loại : </b>@item.TheLoai.TenTheLoai</p>
                     <p class="text-muted"><b>Số Tập : </b>@item.ThoiLuong</p>
                     <p class="card-text"><b>Năm Phát Hành : </b>@item.Nam.TenNam</p>
+                    <p class="card-text"><b>Giá phim: </b>@item.Gia VND</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
                             @*<a onclick="return ConfirmXoa()" href="@Url.Action("XoaPhim", new { id = item.ID })">Xóa</a>*@
                             <button type="button" class="btn btn-success">@Html.ActionLink("Thêm tập", "ThemTapPhim", new { id = item.ID })</button>
-</div>
+                        </div>
                         <div>
                             <button type="button" class="btn btn-success">@Html.ActionLink("Sửa thông tin", "SuaPhim", new { id = item.ID })</button>
-</div>
+                        </div>
                         <a onclick="return ConfirmXoa()" href="@Url.Action("XoaPhim", new { id = item.ID })" class="btn btn-danger btn-icon-split">
                             <span class="icon text-white-50">
                                 <i class="fas fa-trash"></i>
@@ -55,7 +57,7 @@
         else
             return false;
     }
-        FocusEvent = false;
-        checked = false;
+    FocusEvent = false;
+    checked = false;
 </script>
 

@@ -57,10 +57,13 @@ namespace WebsiteMovie_DAN.Areas.Admin.Controllers
                 //int theloai = int.Parse(collection["IDTheLoai"]);
                 int qg = int.Parse(collection["IDQuocGia"]);
                 int nam = int.Parse(collection["NamPH"]);
+                string gia = collection["Gia"];
                 pb.Img = fileName;
                 pb.MaQG = qg;
                 pb.NamPhatHanh = nam;
-                pb.LuotXem = 1;
+                pb.Gia = gia;
+                pb.LuotXem = 0;
+                pb.LuotThich = 0;
             }
             data.DSPhimBos.InsertOnSubmit(pb);
             data.SubmitChanges();
