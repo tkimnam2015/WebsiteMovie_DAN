@@ -17,20 +17,24 @@ namespace WebsiteMovie_DAN.Areas.Admin.Controllers
             int demnd = data.TaiKhoans.ToList().Count;
             int demphimle = data.DSPhimLes.ToList().Count;
             int demphimbo = data.DSPhimBos.ToList().Count;
+            int demluotthichphimbo = data.LuotThichPhimBos.ToList().Count;
             ViewData["NguoiDung"] = demnd;
             ViewData["PhimLe"] = demphimle;
             ViewData["PhimBo"] = demphimbo;
+            ViewData["LuotYeuThichPhimBo"] = demluotthichphimbo;
             var tl = data.TheLoais.ToList();
             var nam = data.Nams.ToList();
             ViewData["TheLoai"] = tl;
             ViewData["Nam"] = nam;
-            var DSPhimBo = data.DSPhimBos.OrderByDescending(x => x.LuotXem).Take(10).ToList();
+            var DSPhimBo = data.DSPhimBos.OrderByDescending(x => x.LuotXem).Take(5).ToList();
             ViewData["TopPhim"] = DSPhimBo;
-            var DSPhimLe = data.DSPhimLes.OrderByDescending(x => x.LuotXem).Take(10).ToList();
+            var LuotYeuThichPhimBo = data.DSPhimBos.OrderByDescending(x => x.LuotThich).Take(5).ToList();
+            ViewData["TopLuotThichPhimBo"] = LuotYeuThichPhimBo;
+            var DSPhimLe = data.DSPhimLes.OrderByDescending(x => x.LuotXem).Take(5).ToList();
             ViewData["TopPhimLe"] = DSPhimLe;
-            var DSPhimBoMoi = data.DSPhimBos.OrderByDescending(a => a.ID).Take(10).ToList();
+            var DSPhimBoMoi = data.DSPhimBos.OrderByDescending(a => a.ID).Take(5).ToList();
             ViewData["PhimBoMoi"] = DSPhimBoMoi;
-            var DSPhimLeMoi = data.DSPhimLes.OrderByDescending(a => a.ID).Take(10).ToList();
+            var DSPhimLeMoi = data.DSPhimLes.OrderByDescending(a => a.ID).Take(5).ToList();
             ViewData["PhimLeMoi"] = DSPhimLeMoi;
             return View();
         }
