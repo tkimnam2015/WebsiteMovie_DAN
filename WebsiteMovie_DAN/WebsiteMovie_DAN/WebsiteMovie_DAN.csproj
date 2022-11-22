@@ -194,6 +194,7 @@
     <Compile Include="Controllers\ChiTietPhimController.cs" />
     <Compile Include="Controllers\DangNhapDangKyController.cs" />
     <Compile Include="Controllers\GioiThieuController.cs" />
+    <Compile Include="Controllers\GioPhimController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LichSuXemController.cs" />
     <Compile Include="Controllers\LuotThichController.cs" />
@@ -366,6 +367,7 @@
     <Content Include="Views\ChiTietPhim\ChiTietPhimLe.cshtml" />
     <Content Include="Views\LichSuXem\Index.cshtml" />
     <Content Include="Views\LuotThich\YeuThichPhimBo.cshtml" />
+    <Content Include="Views\GioPhim\DatPhim.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

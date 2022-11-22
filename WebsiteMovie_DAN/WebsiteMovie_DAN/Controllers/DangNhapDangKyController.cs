@@ -141,6 +141,10 @@ namespace WebsiteMovie_DAN.Controllers
                 data.SubmitChanges();
                 return RedirectToAction("/DangNhap");
             }
+            if (email == tk.Email)
+            {
+                ViewData["Loi1234"] = "thông tin email bị trùng";
+            }
             return View();
         }
         public ActionResult DangXuat()
@@ -202,12 +206,12 @@ namespace WebsiteMovie_DAN.Controllers
                     @Session["ten"] = firstname;
                     @Session["TK"] = aaaaaaaaa;
                     @Session["quyen"] = null;
+                    data.TaiKhoans.InsertOnSubmit(tk);
                 }
                 else
                 {
                     tk.TenDN = firstname + "@321dSDFdgb";
                     tk.MatKhau = "12312ABC@312jidqjv";
-                    data.TaiKhoans.InsertOnSubmit(tk);
                     data.SubmitChanges();
                     @Session["TK"] = firstname;
                     @Session["quyen"] = null;
