@@ -39,6 +39,9 @@ namespace WebsiteMovie_DAN.Models
     partial void InsertCTTapPhim(CTTapPhim instance);
     partial void UpdateCTTapPhim(CTTapPhim instance);
     partial void DeleteCTTapPhim(CTTapPhim instance);
+    partial void InsertDatPhim(DatPhim instance);
+    partial void UpdateDatPhim(DatPhim instance);
+    partial void DeleteDatPhim(DatPhim instance);
     partial void InsertDSPhimBo(DSPhimBo instance);
     partial void UpdateDSPhimBo(DSPhimBo instance);
     partial void DeleteDSPhimBo(DSPhimBo instance);
@@ -119,6 +122,14 @@ namespace WebsiteMovie_DAN.Models
 			get
 			{
 				return this.GetTable<CTTapPhim>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DatPhim> DatPhims
+		{
+			get
+			{
+				return this.GetTable<DatPhim>();
 			}
 		}
 		
@@ -735,6 +746,246 @@ namespace WebsiteMovie_DAN.Models
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DatPhim")]
+	public partial class DatPhim : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _TenDN;
+		
+		private int _IDPhim;
+		
+		private System.DateTime _NgayDat;
+		
+		private decimal _TongTien;
+		
+		private EntityRef<DSPhimBo> _DSPhimBo;
+		
+		private EntityRef<TaiKhoan> _TaiKhoan;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnTenDNChanging(string value);
+    partial void OnTenDNChanged();
+    partial void OnIDPhimChanging(int value);
+    partial void OnIDPhimChanged();
+    partial void OnNgayDatChanging(System.DateTime value);
+    partial void OnNgayDatChanged();
+    partial void OnTongTienChanging(decimal value);
+    partial void OnTongTienChanged();
+    #endregion
+		
+		public DatPhim()
+		{
+			this._DSPhimBo = default(EntityRef<DSPhimBo>);
+			this._TaiKhoan = default(EntityRef<TaiKhoan>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenDN", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string TenDN
+		{
+			get
+			{
+				return this._TenDN;
+			}
+			set
+			{
+				if ((this._TenDN != value))
+				{
+					if (this._TaiKhoan.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnTenDNChanging(value);
+					this.SendPropertyChanging();
+					this._TenDN = value;
+					this.SendPropertyChanged("TenDN");
+					this.OnTenDNChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDPhim", DbType="Int NOT NULL")]
+		public int IDPhim
+		{
+			get
+			{
+				return this._IDPhim;
+			}
+			set
+			{
+				if ((this._IDPhim != value))
+				{
+					if (this._DSPhimBo.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIDPhimChanging(value);
+					this.SendPropertyChanging();
+					this._IDPhim = value;
+					this.SendPropertyChanged("IDPhim");
+					this.OnIDPhimChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayDat", DbType="Date NOT NULL")]
+		public System.DateTime NgayDat
+		{
+			get
+			{
+				return this._NgayDat;
+			}
+			set
+			{
+				if ((this._NgayDat != value))
+				{
+					this.OnNgayDatChanging(value);
+					this.SendPropertyChanging();
+					this._NgayDat = value;
+					this.SendPropertyChanged("NgayDat");
+					this.OnNgayDatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongTien", DbType="Decimal(18,0) NOT NULL")]
+		public decimal TongTien
+		{
+			get
+			{
+				return this._TongTien;
+			}
+			set
+			{
+				if ((this._TongTien != value))
+				{
+					this.OnTongTienChanging(value);
+					this.SendPropertyChanging();
+					this._TongTien = value;
+					this.SendPropertyChanged("TongTien");
+					this.OnTongTienChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DSPhimBo_DatPhim", Storage="_DSPhimBo", ThisKey="IDPhim", OtherKey="ID", IsForeignKey=true)]
+		public DSPhimBo DSPhimBo
+		{
+			get
+			{
+				return this._DSPhimBo.Entity;
+			}
+			set
+			{
+				DSPhimBo previousValue = this._DSPhimBo.Entity;
+				if (((previousValue != value) 
+							|| (this._DSPhimBo.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DSPhimBo.Entity = null;
+						previousValue.DatPhims.Remove(this);
+					}
+					this._DSPhimBo.Entity = value;
+					if ((value != null))
+					{
+						value.DatPhims.Add(this);
+						this._IDPhim = value.ID;
+					}
+					else
+					{
+						this._IDPhim = default(int);
+					}
+					this.SendPropertyChanged("DSPhimBo");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TaiKhoan_DatPhim", Storage="_TaiKhoan", ThisKey="TenDN", OtherKey="TenDN", IsForeignKey=true)]
+		public TaiKhoan TaiKhoan
+		{
+			get
+			{
+				return this._TaiKhoan.Entity;
+			}
+			set
+			{
+				TaiKhoan previousValue = this._TaiKhoan.Entity;
+				if (((previousValue != value) 
+							|| (this._TaiKhoan.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TaiKhoan.Entity = null;
+						previousValue.DatPhims.Remove(this);
+					}
+					this._TaiKhoan.Entity = value;
+					if ((value != null))
+					{
+						value.DatPhims.Add(this);
+						this._TenDN = value.TenDN;
+					}
+					else
+					{
+						this._TenDN = default(string);
+					}
+					this.SendPropertyChanged("TaiKhoan");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DSPhimBo")]
 	public partial class DSPhimBo : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -766,6 +1017,8 @@ namespace WebsiteMovie_DAN.Models
 		private EntitySet<Banner> _Banners;
 		
 		private EntitySet<CTTapPhim> _CTTapPhims;
+		
+		private EntitySet<DatPhim> _DatPhims;
 		
 		private EntitySet<HopPhim> _HopPhims;
 		
@@ -811,6 +1064,7 @@ namespace WebsiteMovie_DAN.Models
 		{
 			this._Banners = new EntitySet<Banner>(new Action<Banner>(this.attach_Banners), new Action<Banner>(this.detach_Banners));
 			this._CTTapPhims = new EntitySet<CTTapPhim>(new Action<CTTapPhim>(this.attach_CTTapPhims), new Action<CTTapPhim>(this.detach_CTTapPhims));
+			this._DatPhims = new EntitySet<DatPhim>(new Action<DatPhim>(this.attach_DatPhims), new Action<DatPhim>(this.detach_DatPhims));
 			this._HopPhims = new EntitySet<HopPhim>(new Action<HopPhim>(this.attach_HopPhims), new Action<HopPhim>(this.detach_HopPhims));
 			this._LichSus = new EntitySet<LichSu>(new Action<LichSu>(this.attach_LichSus), new Action<LichSu>(this.detach_LichSus));
 			this._LuotThichPhimBos = new EntitySet<LuotThichPhimBo>(new Action<LuotThichPhimBo>(this.attach_LuotThichPhimBos), new Action<LuotThichPhimBo>(this.detach_LuotThichPhimBos));
@@ -1078,6 +1332,19 @@ namespace WebsiteMovie_DAN.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DSPhimBo_DatPhim", Storage="_DatPhims", ThisKey="ID", OtherKey="IDPhim")]
+		public EntitySet<DatPhim> DatPhims
+		{
+			get
+			{
+				return this._DatPhims;
+			}
+			set
+			{
+				this._DatPhims.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DSPhimBo_HopPhim", Storage="_HopPhims", ThisKey="ID", OtherKey="IDPhim")]
 		public EntitySet<HopPhim> HopPhims
 		{
@@ -1258,6 +1525,18 @@ namespace WebsiteMovie_DAN.Models
 		}
 		
 		private void detach_CTTapPhims(CTTapPhim entity)
+		{
+			this.SendPropertyChanging();
+			entity.DSPhimBo = null;
+		}
+		
+		private void attach_DatPhims(DatPhim entity)
+		{
+			this.SendPropertyChanging();
+			entity.DSPhimBo = this;
+		}
+		
+		private void detach_DatPhims(DatPhim entity)
 		{
 			this.SendPropertyChanging();
 			entity.DSPhimBo = null;
@@ -2590,6 +2869,8 @@ namespace WebsiteMovie_DAN.Models
 		
 		private string _Email;
 		
+		private EntitySet<DatPhim> _DatPhims;
+		
 		private EntitySet<HopPhim> _HopPhims;
 		
 		private EntitySet<LichSu> _LichSus;
@@ -2612,6 +2893,7 @@ namespace WebsiteMovie_DAN.Models
 		
 		public TaiKhoan()
 		{
+			this._DatPhims = new EntitySet<DatPhim>(new Action<DatPhim>(this.attach_DatPhims), new Action<DatPhim>(this.detach_DatPhims));
 			this._HopPhims = new EntitySet<HopPhim>(new Action<HopPhim>(this.attach_HopPhims), new Action<HopPhim>(this.detach_HopPhims));
 			this._LichSus = new EntitySet<LichSu>(new Action<LichSu>(this.attach_LichSus), new Action<LichSu>(this.detach_LichSus));
 			this._LuotThichPhimBos = new EntitySet<LuotThichPhimBo>(new Action<LuotThichPhimBo>(this.attach_LuotThichPhimBos), new Action<LuotThichPhimBo>(this.detach_LuotThichPhimBos));
@@ -2698,6 +2980,19 @@ namespace WebsiteMovie_DAN.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TaiKhoan_DatPhim", Storage="_DatPhims", ThisKey="TenDN", OtherKey="TenDN")]
+		public EntitySet<DatPhim> DatPhims
+		{
+			get
+			{
+				return this._DatPhims;
+			}
+			set
+			{
+				this._DatPhims.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TaiKhoan_HopPhim", Storage="_HopPhims", ThisKey="TenDN", OtherKey="TenDN")]
 		public EntitySet<HopPhim> HopPhims
 		{
@@ -2755,6 +3050,18 @@ namespace WebsiteMovie_DAN.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_DatPhims(DatPhim entity)
+		{
+			this.SendPropertyChanging();
+			entity.TaiKhoan = this;
+		}
+		
+		private void detach_DatPhims(DatPhim entity)
+		{
+			this.SendPropertyChanging();
+			entity.TaiKhoan = null;
 		}
 		
 		private void attach_HopPhims(HopPhim entity)

@@ -1,0 +1,82 @@
+﻿@using WebsiteMovie_DAN.Models;
+@model List<DatPhim>
+@{
+    ViewBag.Title = "Giỏ Phim - NamLoc Movie";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h3 style="color: #43a6df; font-size: 19px; margin-top: 10px; margin-left: 10px; border-bottom: 2px solid #43a6df">Phim Đã Đặt Mua</h3>
+<div class="card-body">
+    <div class="row" style="padding: 10px">
+        @if (Model.Count > 0)
+        {
+            <table class="table table-bordered" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th style="text-align: center">Mã Phim</th>
+                        <th style="text-align: center">Tên Phim</th>
+                        <th style="text-align: center">Hình</th>
+                        <th style="text-align: center">Giá</th>
+                        <th style="text-align: center">Chức Năng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td style="text-align: center; padding-top: 50px">@item.DSPhimBo.ID</td>
+                            <td style="text-align: center; padding-top: 50px">@item.DSPhimBo.TenPhim</td>
+                            <td style="text-align: center">
+                                <img style="width:120px;height:150px" src="~/Content/Images/@item.DSPhimBo.Img" />
+                            </td>
+                            <td style="text-align: center; padding-top: 50px">@item.DSPhimBo.Gia VND</td>
+                            <td style="text-align: center; padding-top: 50px">
+                                <button type="button" class="btn btn-success">
+                                    <a href="#">
+                                        Thanh Toán
+                                    </a>
+                                </button>
+                                <button type="button" class="btn btn-danger">
+                                    <a onclick="return ConfirmXoa()" href="@Url.Action("XoaPhimDat", new { tendn = item.TenDN,idphim=item.IDPhim })">
+                                        Xóa
+                                    </a>
+                                </button>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <h1 style="color: #43a6df; font-size: 19px; margin-top: 10px; text-align:center;" class="col-12">Không có phim nào được chọn đặt</h1>
+        }
+
+    </div>
+</div>
+
+<p>
+    @if (Model.Count > 0)
+    {
+        <input type="submit" value="Thanh Toán Đơn Đặt Phim" class="btn btn-success form-control" />
+    }
+    @*else
+        {
+            @DateTime.Now.Year @:is not a leap year.
+        }*@
+
+</p>
+
+<script>
+    function ConfirmXoa() {
+        if (confirm("Bạn có chắc muốn xóa Phim này không ?"))
+            return true;
+        else
+            return false;
+    }
+    FocusEvent = false;
+    checked = false;
+</script>
+
+
